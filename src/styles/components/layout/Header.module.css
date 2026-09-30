@@ -71,14 +71,18 @@
   align-self: stretch;
 }
 
-.searchText {
-  margin: 0;
+.searchInput {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  font: inherit; 
+  color: inherit;
+}
+
+.searchInput::placeholder {
   color: var(--darkgray, #666);
-  font-family: "Noto Sans KR", sans-serif;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 300;
-  line-height: normal;
 }
 
 .searchIcon {
@@ -86,6 +90,7 @@
   height: 22px;
   flex-shrink: 0;
   background: url("/assets/icon/search-icon.svg") no-repeat center / contain;
+  cursor: pointer;
 }
 
 .user {

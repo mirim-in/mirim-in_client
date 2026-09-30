@@ -1,3 +1,4 @@
+"use client";
 import styles from "@/styles/components/layout/Header.module.css";
 import Link from "next/link";
 
@@ -9,6 +10,7 @@ interface headerProps {
 }
 
 export const Header = ({ name, stuId, email, isLogin }: headerProps) => {
+  const search = () => {};
   return (
     <div className={styles.header}>
       <div className={styles.logoWrap}>
@@ -20,8 +22,12 @@ export const Header = ({ name, stuId, email, isLogin }: headerProps) => {
       </div>
       <div className={styles.search}>
         <div className={styles.searchWrap}>
-          <p className={styles.searchText}>통합 검색</p>
-          <div className={styles.searchIcon}></div>
+          <input
+            type="text"
+            className={styles.searchInput}
+            placeholder="통합 검색"
+          />
+          <div className={styles.searchIcon} onClick={search}></div>
         </div>
       </div>
       <div className={styles.user}>
