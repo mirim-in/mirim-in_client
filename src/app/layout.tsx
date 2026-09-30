@@ -20,7 +20,7 @@ export default function RootLayout({
           name={"윤기진"}
           stuId={"2106"}
           email={"s2546@e-mirim.hs.kr"}
-          isLogin={false}
+          isLogin={true}
         />
         {children}
       </body>
