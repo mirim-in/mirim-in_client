@@ -1,5 +1,5 @@
 import styles from "@/styles/components/layout/Header.module.css";
-
+import Link from "next/link";
 
 interface headerProps {
   name: string;
@@ -27,23 +27,38 @@ export const Header = ({ name, stuId, email, isLogin }: headerProps) => {
       <div className={styles.user}>
         <div className={styles.userWrap}>
           <div className={styles.userInfo}>
-            <div className={styles.userInfoWrap}>
-              <p className={styles.userName}>{name}</p>
-              <div className={styles.check}>
-                <div
-                  style={{
-                    width: '7px',
-                    height: '5px',
-                    flexShrink: '0',
-                    aspectRatio: '7/5',
-                    backgroundImage: 'url("/assets/icon/check.svg")',
-                    backgroundSize: "contain",
-                    backgroundRepeat: "no-repeat",
-                  }}
-                ></div>
-              </div>
-            </div>
-            <p className={styles.userEmail}>{email}</p>
+            {isLogin ? (
+              <>
+                <div className={styles.userInfoWrap}>
+                  <p className={styles.userName}>{name}</p>
+                  <div className={styles.check}>
+                    <div
+                      style={{
+                        width: "7px",
+                        height: "5px",
+                        flexShrink: 0,
+                        aspectRatio: "7/5",
+                        backgroundImage: 'url("/assets/icon/check.svg")',
+                        backgroundSize: "contain",
+                        backgroundRepeat: "no-repeat",
+                      }}
+                    ></div>
+                  </div>
+                </div>
+                <p className={styles.userEmail}>{email}</p>
+              </>
+            ) : (
+              <Link
+                href="/login"
+                style={{
+                  textDecoration: "none",
+                  color: "var(--darkgray, #666)",
+                }}
+                className={styles.userName}
+              >
+                로그인
+              </Link>
+            )}
           </div>
           <div className={styles.userProfile}></div>
         </div>
