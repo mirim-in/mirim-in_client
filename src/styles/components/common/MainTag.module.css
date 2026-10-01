@@ -66,7 +66,6 @@
 .tag {
   color: var(--darkgray, #666);
   text-align: center;
-  /* L_14 */
   font-family: "Noto Sans KR";
   font-size: 14px;
   font-style: normal;
@@ -81,6 +80,15 @@
   gap: 10px;
 }
 .image {
+  width: 94.344px;
+  height: 82.264px;
+  aspect-ratio: 94.34/82.26;
+  flex-shrink: 0;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.imageBody {
   display: flex;
   height: 89.561px;
   flex-direction: column;
@@ -89,6 +97,4 @@
   gap: 8.831px;
   align-self: stretch;
   aspect-ratio: 102.71/89.56;
-  background-size: contain;
-  background-repeat: no-repeat;
 }
