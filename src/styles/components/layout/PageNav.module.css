@@ -42,3 +42,7 @@
 .active {
   border-bottom: 2px solid var(--green, #007f59);
 }
+
+.active:hover {
+  border-bottom: 2px solid var(--green, #007f59);
+}
