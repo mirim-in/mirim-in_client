@@ -1,0 +1,34 @@
+.mainTagWrap {
+  display: flex;
+  height: 126px;
+  align-items: center;
+  gap: 8px;
+  align-self: stretch;
+}
+
+.body {
+  display: flex;
+  width: 100%;
+  height: 939px;
+  padding: 0 200px;
+  align-items: flex-start;
+  gap: 160px;
+  flex-shrink: 0;
+}
+
+.scroll {
+  display: flex;
+  height: 911px;
+  padding-top: 80px;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.wrap {
+  display: flex;
+  width: 1000px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 80px;
+}
