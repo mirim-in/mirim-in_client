@@ -31,15 +31,24 @@
   align-items: center;
   gap: 4px;
 }
+.titleWrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 4px;
+}
 .dot {
+  display: block;
   width: 1px;
   height: 1px;
   flex-shrink: 0;
   background: url("/assets/icon/dot-icon.svg") no-repeat center / contain;
 }
 .dot.dotTitle {
-  width: 8px;
-  height: 8px;
+  display: block;
+  width: 2px;
+  height: 2px;
   flex-shrink: 0;
   background: url("/assets/icon/dot-icon.svg") no-repeat center / contain;
 }

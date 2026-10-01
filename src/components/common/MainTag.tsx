@@ -20,11 +20,11 @@ export const MainTag = ({ title, tags, image }: Props) => {
     <div className={styles.mainTag}>
       <div className={styles.wrap}>
         <div className={styles.textWrap}>
-          <div className={styles.title}>
+          <div className={styles.titleWrap}>
             {title.map((t, i) => (
               <Fragment key={t}>
                 {i > 0 && <Dot className={styles.dotTitle} />}
-                <span>{t}</span>
+                <span className={styles.title}>{t}</span>
               </Fragment>
             ))}
           </div>
