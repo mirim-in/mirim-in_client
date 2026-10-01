@@ -113,12 +113,15 @@ export const Profile = ({ user, isLogin }: Props) => {
               onClick={() => setTab("notice")}
             />
           </div>
-
-          {tab === "alarm" ? (
-            <p>알람이 없습니다.</p>
-          ) : (
-            <p>공지사항이 없습니다.</p>
-          )}
+          <div className={styles.tabWrap}>
+            <div className={styles.tabTextWrap}>
+              {tab === "alarm" ? (
+                <p className={styles.tabText}>알람이 없습니다.</p>
+              ) : (
+                <p className={styles.tabText}>공지사항이 없습니다.</p>
+              )}
+            </div>
+          </div>
         </div>
       </div>
     </div>

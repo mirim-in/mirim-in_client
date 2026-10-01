@@ -251,6 +251,33 @@
   gap: 4px;
 }
 
-.menuBtnTitleInActive{
+.menuBtnTitleInActive {
   color: var(--green, #007f59);
+}
+
+.tabWrap {
+  display: flex;
+  width: 310px;
+  height: 360px;
+  padding: 16px 24px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.tabTextWrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  align-self: stretch;
+}
+
+.tabText {
+  color: var(--darkgray, #666);
+  font-family: "Noto Sans KR";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 350;
+  line-height: normal;
 }
