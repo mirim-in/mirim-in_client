@@ -1,6 +1,5 @@
 import { MainTag } from "@/components/common/MainTag";
-import styles from '@/styles/apps/(main)/page.module.css';
-
+import styles from "@/styles/apps/(main)/page.module.css";
 
 const MAIN_TAGS = [
   {
@@ -25,26 +24,20 @@ const MAIN_TAGS = [
 
 export default function Home() {
   return (
-    <div className={styles.body}>
-      <div className={styles.scroll}>  
-        <div className={styles.wrap}>
-          <div className={styles.mainTagWrap}>
-            {MAIN_TAGS.map((tag) => {
-              return (
-                <MainTag
-                  key={tag.id}
-                  title={tag.title}
-                  tags={tag.tags}
-                  image={tag.image}
-                />
-              );
-            })}
-          </div>
-          <div>
-              
-          </div>
-        </div>
+    <div className={styles.wrap}>
+      <div className={styles.mainTagWrap}>
+        {MAIN_TAGS.map((tag) => {
+          return (
+            <MainTag
+              key={tag.id}
+              title={tag.title}
+              tags={tag.tags}
+              image={tag.image}
+            />
+          );
+        })}
       </div>
+      <div></div>
     </div>
   );
 }

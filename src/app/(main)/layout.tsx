@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Header } from "@/components/layout/Header";
 import "@/styles/globals.css";
+import { Profile } from "@/components/layout/Profile";
 
 export const metadata: Metadata = {
   title: "Mirim in",
@@ -21,11 +22,11 @@ export default function RootLayout({
   return (
     <html lang="ko">
       <body>
-        <Header
-          user={user}
-          isLogin={true}
-        />
-        {children}
+        <Header user={user} isLogin={true} />
+        <div className="pageBody">
+          <div className="scroll">{children}</div>
+          <Profile user={user} isLogin={true} />
+        </div>
       </body>
     </html>
   );
