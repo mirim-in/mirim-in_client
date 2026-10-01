@@ -33,7 +33,7 @@ interface MenuBtnProps {
 }
 const MenuBtn = ({ title, isActive, onClick }: MenuBtnProps) => (
   <div
-    className={`${styles.menuBtn} ${isActive ? styles.menuBtnActive : ""}`}
+    className={`${styles.menuBtn} ${isActive ? styles.menuBtnActive : styles.menuBtnInActive}`}
     onClick={onClick}
   >
     {title === "알람" ? (

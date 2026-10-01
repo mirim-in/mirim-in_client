@@ -221,12 +221,17 @@
   gap: 8px;
   flex-shrink: 0;
   border-radius: 16px;
-  background: var(--gray, #f8f7f7);
 }
 .menuBtnTitle {
-  color: var(--darkgray, #666);
+    color: var(--darkgray, #666);
 }
-
+.menuBtnInActive {
+    background: var(--gray, #f8f7f7);
+}
+.menuBtnInActive:hover {
+  background: var(--green, #eff5f3);
+  transition: 0.2s;
+}
 .menuBtnActive {
   background: var(--green, #007f59);
 }
