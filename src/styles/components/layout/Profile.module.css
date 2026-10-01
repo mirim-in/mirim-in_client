@@ -223,10 +223,10 @@
   border-radius: 16px;
 }
 .menuBtnTitle {
-    color: var(--darkgray, #666);
+  color: var(--darkgray, #666);
 }
 .menuBtnInActive {
-    background: var(--gray, #f8f7f7);
+  background: var(--gray, #f8f7f7);
 }
 .menuBtnInActive:hover {
   background: var(--green, #eff5f3);
@@ -248,6 +248,11 @@
   background-repeat: no-repeat;
 }
 .alarmIconInActive {
+  width: 13px;
+  height: 13px;
+  flex-shrink: 0;
+  background-size: contain;
+  background-repeat: no-repeat;
   background-image: url("/assets/icon/alarm-icon-active.svg");
 }
 .menuBtnTextWrap {

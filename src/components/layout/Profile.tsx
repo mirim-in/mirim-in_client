@@ -38,7 +38,7 @@ const MenuBtn = ({ title, isActive, onClick }: MenuBtnProps) => (
   >
     {title === "알람" ? (
       <div
-        className={`${styles.alarmIcon} ${!isActive ? styles.alarmIconInActive : ""}`}
+        className={`${isActive ? styles.alarmIcon : styles.alarmIconInActive}`}
       ></div>
     ) : null}
     <div className={styles.menuBtnTextWrap}>
