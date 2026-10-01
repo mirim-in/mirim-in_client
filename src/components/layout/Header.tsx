@@ -3,10 +3,17 @@ import styles from "@/styles/components/layout/Header.module.css";
 import Link from "next/link";
 import { PageNav } from "@/components/layout/PageNav";
 
+interface User {
+  name: string;
+  email: string;
+  isAdmin: boolean;
+}
+
 interface headerProps {
-  user: object;
+  user: User;
   isLogin: boolean;
 }
+
 
 export const Header = ({ user, isLogin }: headerProps) => {
   const search = () => {};
