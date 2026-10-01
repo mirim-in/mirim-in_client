@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
-import { Header } from "@/components/layout/Header";
-import "@/app/globals.css";
+import "@/styles/globals.css";
 
 export const metadata: Metadata = {
   title: "Mirim in",
