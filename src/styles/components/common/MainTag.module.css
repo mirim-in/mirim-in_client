@@ -9,6 +9,7 @@
   border-radius: 12px;
   background: var(--light-green, #e6f1e9);
 }
+
 .wrap {
   display: flex;
   justify-content: space-between;
@@ -16,6 +17,7 @@
   flex: 1 0 0;
   align-self: stretch;
 }
+
 .textWrap {
   display: flex;
   width: 168px;
@@ -25,12 +27,14 @@
   gap: 4px;
   align-self: stretch;
 }
+
 .tagWrap {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 4px;
 }
+
 .titleWrap {
   display: flex;
   justify-content: center;
@@ -38,6 +42,7 @@
   flex-direction: row;
   gap: 4px;
 }
+
 .dot {
   display: block;
   width: 1px;
@@ -45,12 +50,10 @@
   flex-shrink: 0;
   background: url("/assets/icon/dot-icon.svg") no-repeat center / contain;
 }
+
 .dot.dotTitle {
-  display: block;
   width: 2px;
   height: 2px;
-  flex-shrink: 0;
-  background: url("/assets/icon/dot-icon.svg") no-repeat center / contain;
 }
 
 .title {
@@ -72,6 +75,7 @@
   font-weight: 350;
   line-height: normal;
 }
+
 .imageWrap {
   display: flex;
   padding: 0 16px;
@@ -79,10 +83,10 @@
   align-items: center;
   gap: 10px;
 }
+
 .image {
   width: 94.344px;
   height: 82.264px;
-  aspect-ratio: 94.34/82.26;
   flex-shrink: 0;
   background-size: contain;
   background-repeat: no-repeat;
@@ -96,5 +100,4 @@
   align-items: center;
   gap: 8.831px;
   align-self: stretch;
-  aspect-ratio: 102.71/89.56;
 }
