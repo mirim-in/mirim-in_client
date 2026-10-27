@@ -2,6 +2,7 @@ import { MainTag } from "@/components/common/MainTag";
 import styles from "@/styles/apps/(main)/page.module.css";
 import { TagGroup } from "@/components/common/Tag";
 import { Question } from "@/components/common/Question";
+import { Pagination } from "@/components/common/Pagination";
 
 const MAIN_TAGS = [
   {
@@ -113,6 +114,9 @@ export default function Home() {
               ))}
             </div>
           ))}
+        </div>
+        <div className={styles.pagenationWrap}>
+          <Pagination totalPages={10} />
         </div>
       </div>
     </div>
