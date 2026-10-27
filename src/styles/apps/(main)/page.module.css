@@ -20,12 +20,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 24px;
+  gap: clamp(16px, 1.25vw, 24px);
   align-self: stretch;
 }
 .titleWrap {
   display: flex;
-  padding-right: 8px;
+  padding-right: clamp(4px, 0.42vw, 8px);
   justify-content: space-between;
   align-items: center;
   align-self: stretch;
@@ -36,7 +36,7 @@
 
   /* M_28 */
   font-family: "Noto Sans KR";
-  font-size: 28px;
+  font-size: clamp(20px, 1.46vw, 28px);
   font-style: normal;
   font-weight: 500;
   line-height: normal;

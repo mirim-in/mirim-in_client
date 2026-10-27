@@ -70,39 +70,12 @@ const POPULAR_QUESTIONS = [
     view: 287,
     res: 7,
   },
-  {
-    id: "7",
-    title: "교복 구매는 언제 하나요?",
-    note: "합격 발표 이후 교복 맞추는 일정이 따로 안내되는지 궁금합니다.",
-    view: 254,
-    res: 2,
-  },
-  {
-    id: "8",
-    title: "동아리 종류가 많나요?",
-    note: "전공 동아리랑 일반 동아리가 어떻게 나뉘는지, 몇 개까지 들 수 있는지 알려주세요.",
-    view: 231,
-    res: 3,
-  },
-  {
-    id: "9",
-    title: "취업 준비는 몇 학년부터 하나요?",
-    note: "선배님들은 보통 언제부터 포트폴리오나 자격증 준비를 시작하셨는지 궁금해요.",
-    view: 198,
-    res: 5,
-  },
-  {
-    id: "10",
-    title: "급식 맛있나요?",
-    note: "기숙사생은 아침 저녁도 학교에서 먹는다고 들었는데 급식 퀄리티가 어떤지 궁금합니다.",
-    view: 176,
-    res: 9,
-  },
 ];
 
+const QUESTION_ROWS = 3;
 const QUESTION_COLUMNS = [
-  POPULAR_QUESTIONS.slice(0, 5),
-  POPULAR_QUESTIONS.slice(5, 10),
+  POPULAR_QUESTIONS.slice(0, QUESTION_ROWS),
+  POPULAR_QUESTIONS.slice(QUESTION_ROWS, QUESTION_ROWS * 2),
 ];
 
 export default function Home() {
@@ -131,7 +104,7 @@ export default function Home() {
               {column.map((q, i) => (
                 <Question
                   key={q.id}
-                  num={col * 5 + i + 1}
+                  num={col * QUESTION_ROWS + i + 1}
                   title={q.title}
                   note={q.note}
                   view={q.view}
