@@ -43,7 +43,7 @@ export const MainTag = ({ title, tags, image }: Props) => {
             <div className={styles.imageBody}>
               <div
                 className={styles.image}
-                style={{ backgroundImage: `url(assets/icon/${image}.svg)` }}
+                style={{ backgroundImage: `url(/assets/icon/${image}.svg)` }}
               ></div>
             </div>
           </div>
