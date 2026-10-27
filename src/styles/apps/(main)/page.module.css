@@ -30,3 +30,27 @@
   align-items: center;
   align-self: stretch;
 }
+
+.title {
+  color: #000;
+
+  /* M_28 */
+  font-family: "Noto Sans KR";
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.questionWrap {
+  display: flex;
+  align-items: flex-start;
+  align-self: stretch;
+}
+
+.questionColumn {
+  display: flex;
+  flex: 1 1 0;
+  min-width: 0;
+  flex-direction: column;
+}
