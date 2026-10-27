@@ -22,7 +22,7 @@
 
 .textWrap {
   display: flex;
-  width: clamp(110px, 8.75vw, 168px);
+  flex: 0 1 clamp(110px, 8.75vw, 168px);
   min-width: 0;
   flex-direction: column;
   justify-content: center;
