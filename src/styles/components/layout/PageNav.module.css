@@ -1,7 +1,7 @@
 .pageNav {
   display: flex;
-  height: 64px;
-  padding: 0 200px 0 224px;
+  height: clamp(40px, 2.6vw, 50px);
+  padding: 0 clamp(16px, 6vw, 200px);
   justify-content: center;
   align-items: stretch;
   gap: 80px;
@@ -13,13 +13,13 @@
   display: flex;
   justify-content: center;
   align-items: stretch;
-  gap: 24px;
+  gap: clamp(4px, 0.83vw, 16px);
   align-self: stretch;
 }
 
 .navItem {
   display: flex;
-  padding: 0 24px;
+  padding: 0 clamp(10px, 1.04vw, 20px);
   justify-content: center;
   align-items: center;
   gap: 10px;
@@ -27,7 +27,7 @@
   text-decoration: none;
   color: var(--darkgray, #666);
   font-family: "Noto Sans KR";
-  font-size: 18px;
+  font-size: clamp(14px, 0.83vw, 16px);
   font-style: normal;
   font-weight: 400;
   line-height: normal;
