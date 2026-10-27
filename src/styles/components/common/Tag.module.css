@@ -1,12 +1,12 @@
 .group {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: clamp(4px, 0.42vw, 8px);
 }
 
 .wrap {
   display: flex;
-  padding: 10px 16px;
+  padding: clamp(6px, 0.52vw, 10px) clamp(10px, 0.83vw, 16px);
   justify-content: center;
   align-items: center;
   gap: 10px;
@@ -22,7 +22,7 @@
 .text {
   /* R_18 */
   font-family: "Noto Sans KR";
-  font-size: 18px;
+  font-size: clamp(13px, 0.94vw, 18px);
   font-style: normal;
   font-weight: 400;
   line-height: normal;
