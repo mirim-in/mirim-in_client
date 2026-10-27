@@ -1,0 +1,104 @@
+.container {
+  display: flex;
+  width: 100%;
+  max-width: 500px;
+  padding: 16px 0;
+  align-items: center;
+}
+
+.numWrap {
+  display: flex;
+  padding: 0 24px;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  align-self: stretch;
+}
+
+.num {
+  color: var(--green, #007f59);
+
+  /* M_20 */
+  font-family: "Noto Sans KR";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.bodyWrap {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  flex: 1 0 0;
+  min-width: 0;
+}
+
+.title {
+  max-width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: var(--000, #000);
+
+  /* R_20 */
+  font-family: "Noto Sans KR";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.noteWrap {
+  display: flex;
+  padding-right: 16px;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+  align-self: stretch;
+}
+.note {
+  min-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: var(--30, rgba(0, 0, 0, 0.3));
+
+  /* R_16 */
+  font-family: "Noto Sans KR";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.infoWrap {
+  display: flex;
+  height: 19px;
+  align-items: center;
+  gap: 16px;
+  align-self: stretch;
+}
+
+.view {
+  color: var(--green, #007f59);
+
+  /* L_14 */
+  font-family: "Noto Sans KR";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 350;
+  line-height: normal;
+}
+
+.res {
+  color: var(--darkgray, #666);
+
+  /* L_14 */
+  font-family: "Noto Sans KR";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 350;
+  line-height: normal;
+}
