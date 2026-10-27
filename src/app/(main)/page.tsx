@@ -1,5 +1,6 @@
 import { MainTag } from "@/components/common/MainTag";
 import styles from "@/styles/apps/(main)/page.module.css";
+import { TagGroup } from "@/components/common/Tag";
 
 const MAIN_TAGS = [
   {
@@ -22,6 +23,8 @@ const MAIN_TAGS = [
   },
 ];
 
+const POPULAR_SORTS = ["이번 주", "이번 달", "조회수"];
+
 export default function Home() {
   return (
     <div className={styles.wrap}>
@@ -37,7 +40,14 @@ export default function Home() {
           );
         })}
       </div>
-      <div></div>
+      <div className={styles.popularWrap}>
+        <div className={styles.titleWrap}>
+          <p>인기 질문</p>
+          <TagGroup tags={POPULAR_SORTS} />
+        </div>
+        <div></div>
+        <div></div>
+      </div>
     </div>
   );
 }

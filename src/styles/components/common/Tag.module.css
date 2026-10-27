@@ -1,0 +1,33 @@
+.group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.wrap {
+  display: flex;
+  padding: 10px 16px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border: none;
+  border-radius: 1000px;
+  background: var(--gray, #f8f7f7);
+  cursor: pointer;
+}
+.wrap.select {
+  background: var(--light-green, #e6f1e9);
+}
+
+.text {
+  /* R_18 */
+  font-family: "Noto Sans KR";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  color: var(--darkgray, #666);
+}
+.text.select {
+  color: var(--green, #007f59);
+}

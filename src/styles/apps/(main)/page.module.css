@@ -15,3 +15,18 @@
   align-items: flex-start;
   gap: clamp(32px, 4.17vw, 80px);
 }
+
+.popularWrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  align-self: stretch;
+}
+.titleWrap {
+  display: flex;
+  padding-right: 8px;
+  justify-content: space-between;
+  align-items: center;
+  align-self: stretch;
+}
