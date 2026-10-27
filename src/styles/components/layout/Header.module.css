@@ -3,31 +3,30 @@
   width: 100%;
   flex-direction: column;
   align-items: center;
-  justify-content: center ;
+  justify-content: center;
   box-shadow: 0 0 12px rgba(0, 0, 0, 0.08);
-  overflow: hidden;
 }
 
 .wrap {
   display: flex;
   max-width: 1920px;
   width: 100%;
+  gap: clamp(8px, 4vw, 138px);
   box-sizing: border-box;
   padding: 24px 0 8px 0;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   background: var(--fff, #fff);
 }
+
 .logoWrap {
   display: flex;
   flex: 1 1 0;
-  width: 100%;
-  padding-left: clamp(16px, 10vw, 200px);
-  min-width: 0;
+  min-width: max-content;
+  padding-left: clamp(16px, 6vw, 200px);
   box-sizing: border-box;
   align-items: center;
   gap: 8px;
-  flex-shrink: 0;
 }
 
 .logo {
@@ -41,6 +40,7 @@
   display: flex;
   height: 44px;
   align-items: center;
+  white-space: nowrap;
 }
 
 .logoText {
@@ -64,13 +64,13 @@
 
 .search {
   display: flex;
-  min-width: 0;
+  flex: 0 1 800px;
+  min-width: 120px;
   padding: 12px 16px;
   box-sizing: border-box;
   justify-content: flex-end;
   align-items: center;
   gap: 10px;
-  flex: 0 1 800px;
   border-radius: 12px;
   background: var(--gray, #f8f7f7);
 }
@@ -108,14 +108,13 @@
 .user {
   display: flex;
   flex: 1 1 0;
-  min-width: 0;
-  padding-right: clamp(16px, 10vw, 200px);
+  min-width: max-content;
+  padding-right: clamp(16px, 6vw, 200px);
   box-sizing: border-box;
   flex-direction: column;
   justify-content: center;
   align-items: flex-end;
   gap: 10px;
-  flex-shrink: 0;
 }
 
 .userWrap {
@@ -129,6 +128,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: flex-end;
+  white-space: nowrap;
 }
 
 .userInfoWrap {
@@ -174,4 +174,22 @@
   height: 32px;
   flex-shrink: 0;
   background: url("/assets/icon/user-icon.svg") no-repeat center / contain;
+}
+
+@media (max-width: 1100px) {
+  .logoTextWrap {
+    display: none;
+  }
+  .logoWrap {
+    min-width: 0;
+  }
+}
+
+@media (max-width: 800px) {
+  .userInfo {
+    display: none;
+  }
+  .user {
+    min-width: 0;
+  }
 }
