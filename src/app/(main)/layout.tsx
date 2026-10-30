@@ -13,12 +13,12 @@ export default function MainLayout({
   children: React.ReactNode;
 }) {
   return (
-    <>
+    <div className="page">
       <Header user={user} isLogin={true} />
       <div className="pageBody">
         <div className="scroll">{children}</div>
         <Profile user={user} isLogin={true} />
       </div>
-    </>
+    </div>
   );
 }
