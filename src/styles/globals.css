@@ -9,7 +9,7 @@ body {
 }
 
 :root {
-  --page-top: clamp(36px, 3.33vw, 64px);
+  --page-top: clamp(24px, 2.22vw, 43px);
 }
 
 *,
