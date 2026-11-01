@@ -41,7 +41,7 @@ export const Footer = () => {
       </div>
       <div className={styles.mirimInLogoWrap}>
         <div></div>
-        <div>
+        <div className={styles.mirimInText}>
           <p>미림</p>
           <p>iN</p>
         </div>

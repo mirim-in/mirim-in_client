@@ -22,17 +22,18 @@
 
 .textWrap {
   display: flex;
-  flex: 0 1 clamp(110px, 8.75vw, 168px);
+  flex: 0 0 auto;
   min-width: 0;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  gap: 4px;
+  gap: clamp(2px, 0.12vw, 4px);
   align-self: stretch;
 }
 
 .tagWrap {
   display: flex;
+  white-space: nowrap;
   justify-content: center;
   align-items: center;
   gap: 4px;
@@ -40,6 +41,7 @@
 
 .titleWrap {
   display: flex;
+  white-space: nowrap;
   justify-content: center;
   align-items: center;
   flex-direction: row;
@@ -81,7 +83,8 @@
 
 .imageWrap {
   display: flex;
-  flex-shrink: 0;
+  flex-shrink: 1;
+  min-width: 0;
   padding: 0 clamp(8px, 0.83vw, 16px);
   justify-content: flex-end;
   align-items: center;
@@ -90,14 +93,16 @@
 
 .image {
   width: clamp(60px, 4.91vw, 94.344px);
+  max-width: 100%;
   aspect-ratio: 94.344 / 82.264;
-  flex-shrink: 0;
+  flex-shrink: 1;
   background-size: contain;
   background-repeat: no-repeat;
 }
 
 .imageBody {
   display: flex;
+  min-width: 0;
   height: clamp(57px, 4.66vw, 89.561px);
   flex-direction: column;
   justify-content: center;

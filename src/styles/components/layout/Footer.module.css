@@ -22,6 +22,7 @@
   aspect-ratio: 40/31;
   flex-shrink: 0;
   background: url("/assets/icon/mirim.svg") no-repeat center / contain;
+  filter: grayscale(1);
 }
 
 .infoTextWrap {
@@ -66,6 +67,24 @@
   gap: clamp(6px, 0.52vw, 10px);
   aspect-ratio: 127/44;
 }
+.mirimInText {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  font-family: "Noto Sans KR";
+  font-size: clamp(20px, 1.46vw, 28px);
+  font-weight: 700;
+  line-height: normal;
+}
+.mirimInText p:first-child {
+  color: var(--darkgray, #666);
+  font-family: MICEGothic, "Noto Sans KR";
+  letter-spacing: -0.06em;
+}
+.mirimInText p:last-child {
+  color: var(--30, rgba(0, 0, 0, 0.3));
+}
+
 .menuWrap {
   display: flex;
   padding: 0 clamp(8px, 0.83vw, 16px);

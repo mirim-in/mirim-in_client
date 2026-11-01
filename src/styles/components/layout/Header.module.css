@@ -178,21 +178,3 @@
   flex-shrink: 0;
   background: url("/assets/icon/user-icon.svg") no-repeat center / contain;
 }
-
-@media (max-width: 1100px) {
-  .logoTextWrap {
-    display: none;
-  }
-  .logoWrap {
-    min-width: 0;
-  }
-}
-
-@media (max-width: 800px) {
-  .userInfo {
-    display: none;
-  }
-  .user {
-    min-width: 0;
-  }
-}
