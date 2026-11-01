@@ -1,0 +1,103 @@
+.body {
+  display: flex;
+  padding: clamp(20px, 2.08vw, 40px) clamp(16px, 4.17vw, 80px);
+  justify-content: space-between;
+  align-items: center;
+  flex: 0 0 0;
+  align-self: stretch;
+  max-width: 1920px;
+  width: 100%;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.infoWrap {
+  display: flex;
+  align-items: center;
+  gap: clamp(16px, 2.08vw, 40px);
+  align-self: stretch;
+}
+
+.image {
+  width: clamp(64px, 6.25vw, 120px);
+  aspect-ratio: 40/31;
+  flex-shrink: 0;
+  background: url("/assets/icon/mirim.svg") no-repeat center / contain;
+}
+
+.infoTextWrap {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: clamp(12px, 1.25vw, 24px);
+}
+
+.menuGrid {
+  display: flex;
+  align-items: center;
+}
+.addressWrap {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: clamp(8px, 0.83vw, 16px);
+}
+.addressKRWrap {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: clamp(4px, 0.42vw, 8px);
+}
+
+.addressEngWrap {
+  display: flex;
+  align-items: center;
+}
+.addressEngItem:first-child {
+  padding-right: clamp(8px, 0.83vw, 16px);
+  border-right: 1px solid var(--10, rgba(0, 0, 0, 0.1));
+}
+.addressEngItem:last-child {
+  padding-left: clamp(12px, 1.25vw, 24px);
+}
+
+.mirimInLogoWrap {
+  display: flex;
+  align-items: center;
+  gap: clamp(6px, 0.52vw, 10px);
+  aspect-ratio: 127/44;
+}
+.menuWrap {
+  display: flex;
+  padding: 0 clamp(8px, 0.83vw, 16px);
+  justify-content: center;
+  align-items: center;
+}
+.menuWrap:first-child {
+  padding-left: 0;
+  border-right: 1px solid var(--10, rgba(0, 0, 0, 0.1));
+}
+.menuWrap:last-child {
+  padding-right: 0;
+  border-left: 1px solid var(--10, rgba(0, 0, 0, 0.1));
+}
+.menu {
+  color: var(--000, #000);
+
+  /* R_16 */
+  font-family: "Noto Sans KR";
+  font-size: clamp(12px, 0.83vw, 16px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.note {
+  color: var(--darkgray, #666);
+
+  /* R_16 */
+  font-family: "Noto Sans KR";
+  font-size: clamp(12px, 0.83vw, 16px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
