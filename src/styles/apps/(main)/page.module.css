@@ -58,8 +58,8 @@
 .pagenationWrap {
   display: flex;
   width: 100%;
-  padding: 24px 0;
+  padding: clamp(15px, 1.25vw, 24px) 0;
   justify-content: center;
   align-items: center;
-  gap: 16px;
+  gap: clamp(10px, 0.83vw, 16px);
 }

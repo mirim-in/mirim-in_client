@@ -9,7 +9,7 @@
   padding: clamp(6px, 0.52vw, 10px) clamp(10px, 0.83vw, 16px);
   justify-content: center;
   align-items: center;
-  gap: 10px;
+  gap: clamp(6px, 0.52vw, 10px);
   border: none;
   border-radius: 1000px;
   background: var(--gray, #f8f7f7);

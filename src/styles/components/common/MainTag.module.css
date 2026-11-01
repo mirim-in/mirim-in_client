@@ -1,13 +1,13 @@
 .mainTag {
   display: flex;
-  padding: clamp(10px, 1vw, 16px) clamp(4px, 0.5vw, 8px) clamp(10px, 1vw, 16px) clamp(12px, 1.25vw, 24px);
+  padding: clamp(10px, 0.83vw, 16px) clamp(4px, 0.42vw, 8px) clamp(10px, 0.83vw, 16px) clamp(12px, 1.25vw, 24px);
   flex-direction: column;
   align-items: flex-start;
-  gap: 10px;
+  gap: clamp(6px, 0.52vw, 10px);
   flex: 1 0 0;
   align-self: stretch;
   min-width: 0;
-  border-radius: 12px;
+  border-radius: clamp(8px, 0.62vw, 12px);
   background: var(--light-green, #e6f1e9);
 }
 
@@ -27,7 +27,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  gap: clamp(2px, 0.12vw, 4px);
+  gap: clamp(2px, 0.21vw, 4px);
   align-self: stretch;
 }
 
@@ -36,7 +36,7 @@
   white-space: nowrap;
   justify-content: center;
   align-items: center;
-  gap: 4px;
+  gap: clamp(2px, 0.21vw, 4px);
 }
 
 .titleWrap {
@@ -45,7 +45,7 @@
   justify-content: center;
   align-items: center;
   flex-direction: row;
-  gap: 4px;
+  gap: clamp(2px, 0.21vw, 4px);
 }
 
 .dot {
@@ -88,7 +88,7 @@
   padding: 0 clamp(8px, 0.83vw, 16px);
   justify-content: flex-end;
   align-items: center;
-  gap: 10px;
+  gap: clamp(6px, 0.52vw, 10px);
 }
 
 .image {
@@ -107,6 +107,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 8.831px;
+  gap: clamp(6px, 0.46vw, 8.831px);
   align-self: stretch;
 }

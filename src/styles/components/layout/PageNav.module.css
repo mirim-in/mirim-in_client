@@ -1,10 +1,10 @@
 .pageNav {
   display: flex;
   height: clamp(40px, 2.6vw, 50px);
-  padding: 0 clamp(16px, 6vw, 200px);
+  padding: 0 clamp(16px, 10.42vw, 200px);
   justify-content: center;
   align-items: stretch;
-  gap: 80px;
+  gap: clamp(50px, 4.17vw, 80px);
   align-self: stretch;
   background: var(--fff, #fff);
 }
@@ -22,7 +22,7 @@
   padding: 0 clamp(10px, 1.04vw, 20px);
   justify-content: center;
   align-items: center;
-  gap: 10px;
+  gap: clamp(6px, 0.52vw, 10px);
   align-self: stretch;
   text-decoration: none;
   color: var(--darkgray, #666);

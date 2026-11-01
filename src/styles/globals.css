@@ -33,7 +33,7 @@ body {
   flex-direction: column;
   overflow-y: auto;
   scrollbar-width: none;
-  gap: 30px;
+  gap: clamp(19px, 1.56vw, 30px);
 }
 
 .scroll::-webkit-scrollbar {
@@ -46,10 +46,10 @@ body {
   width: 100%;
   max-width: 1920px;
   margin: 0 auto;
-  padding: 0 clamp(140px, 6vw, 200px);
+  padding: 0 clamp(140px, 10.42vw, 200px);
   align-items: flex-start;
   justify-content: center;
-  gap: clamp(20px, 3.8vw, 156px);
+  gap: clamp(20px, 8.12vw, 156px);
 }
 
 .content {
@@ -60,5 +60,5 @@ body {
   padding: var(--page-top) 0;
   flex-direction: column;
   align-items: center;
-  gap: 10px;
+  gap: clamp(6px, 0.52vw, 10px);
 }
