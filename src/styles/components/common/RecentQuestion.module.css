@@ -1,0 +1,68 @@
+.wrap {
+  display: flex;
+  padding: 20px 0;
+  align-items: flex-start;
+  gap: 40px;
+  align-self: stretch;
+}
+
+.left {
+  display: flex;
+  padding-top: 4px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  flex: 1 0 0;
+}
+
+.right {
+  display: flex;
+  width: 72px;
+  height: 110px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+}
+
+.titleWrap {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.title {
+  color: var(--000, #000);
+  /* R_20 */
+  font-family: "Noto Sans KR";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.tag {
+  display: flex;
+  padding: 4px 8px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 1000px;
+}
+.tagText {
+  font-family: "Noto Sans KR";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 350;
+  line-height: normal;
+}
+.preview {
+  align-self: stretch;
+  color: var(--30, rgba(0, 0, 0, 0.3));
+
+  /* L_16 */
+  font-family: "Noto Sans KR";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 350;
+  line-height: normal;
+}

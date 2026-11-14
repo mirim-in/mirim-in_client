@@ -46,3 +46,27 @@ export const TagGroup = ({ tags, onChange }: TagGroupProps) => {
     </div>
   );
 };
+
+interface SmallTagGroupProps {
+  tags: string[];
+}
+interface SmallTagProps {
+  text: string;
+}
+
+export const SmallTag = ({ text }: SmallTagProps) => {
+  return (
+    <span className={styles.smallTagWrap}>
+      <span className={styles.smallTagText}>{text}</span>
+    </span>
+  );
+};
+export const SmallTagGroup = ({ tags }: SmallTagGroupProps) => {
+  return (
+    <div className={styles.smallGroup}>
+      {tags.map((tag, i) => (
+        <SmallTag key={`${tag}-${i}`} text={tag} />
+      ))}
+    </div>
+  );
+};
