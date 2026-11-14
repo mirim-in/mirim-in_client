@@ -78,7 +78,12 @@ export const RecentQuestion = ({
           </div>
         </div>
       </div>
-      <div className={styles.right}></div>
+      <div className={styles.right}>
+        <div>
+          <p className={styles.answerCount}>{answerCount}</p>
+          <p className={styles.answerNote}>답변</p>
+        </div>
+      </div>
     </div>
   );
 };
