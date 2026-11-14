@@ -114,7 +114,9 @@ export default async function Home() {
               </div>
             ))
           ) : (
-            <p>존재하지 않습니다.</p>
+            <div className={styles.notExists}>
+              <p>데이터가 존재하지 않습니다.</p>
+            </div>
           )}
         </div>
         <div className={styles.pagenationWrap}>
