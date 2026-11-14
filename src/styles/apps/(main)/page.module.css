@@ -22,6 +22,7 @@
   align-items: center;
   gap: clamp(16px, 1.25vw, 24px);
   align-self: stretch;
+  margin-bottom: clamp(72px, 6.2vw, 120px);
 }
 .titleWrap {
   display: flex;
@@ -64,10 +65,22 @@
   gap: clamp(10px, 0.83vw, 16px);
 }
 
-.notExists{
+.notExists {
   width: 100%;
   height: 300px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
+.recentQuestionWrap {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: clamp(16px, 1.25vw, 24px);
+  align-self: stretch;
+  width: 100%;
+}
+
+
+

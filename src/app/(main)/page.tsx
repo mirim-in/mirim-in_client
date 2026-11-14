@@ -1,5 +1,6 @@
 import { MainTag } from "@/components/common/MainTag";
 import styles from "@/styles/apps/(main)/page.module.css";
+import "@/styles/globals.css";
 import { TagGroup } from "@/components/common/Tag";
 import { Question } from "@/components/common/Question";
 import { Pagination } from "@/components/common/Pagination";
@@ -68,6 +69,30 @@ const getPopularQuestions = async (): Promise<PopularQuestion[]> => {
     return [];
   }
 };
+interface Category {
+  id: number;
+  name: string;
+  official: boolean;
+}
+const getTags = async (): Promise<Category[]> => {
+  try {
+    const res = await fetch(`${API_URL}/api/categories`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    if (!res.ok) {
+      throw new Error(`API 요청 실패: ${res.status}`);
+    }
+    const data = await res.json();
+    console.log(data);
+    return data;
+  } catch (err) {
+    console.log("태그 불러오기 에러 : ", err);
+    return [];
+  }
+};
 
 const QUESTION_ROWS = 3;
 
@@ -77,7 +102,8 @@ export default async function Home() {
     POPULAR_QUESTIONS.slice(0, QUESTION_ROWS),
     POPULAR_QUESTIONS.slice(QUESTION_ROWS, QUESTION_ROWS * 2),
   ];
-
+  const tags_obj = await getTags();
+  const tags_arr = tags_obj.map((t) => t.name);
   return (
     <div className={styles.wrap}>
       <div className={styles.mainTagWrap}>
@@ -123,7 +149,11 @@ export default async function Home() {
           <Pagination totalPages={10} />
         </div>
       </div>
-      <div></div>
+      <div className={styles.recentQuestionWrap}>
+        <p className={styles.title}>최근에 작성된 질문</p>
+        <TagGroup tags={["전체", ...tags_arr]} />
+        <div></div>
+      </div>
     </div>
   );
 }
