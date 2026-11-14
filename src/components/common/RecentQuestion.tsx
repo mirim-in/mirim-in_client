@@ -1,5 +1,4 @@
 import styles from "@/styles/components/common/RecentQuestion.module.css";
-import "@/styles/globals.css";
 import { SmallTagGroup } from "./Tag";
 
 interface Author {
@@ -79,7 +78,7 @@ export const RecentQuestion = ({
         </div>
       </div>
       <div className={styles.right}>
-        <div>
+        <div className={styles.answerWrap}>
           <p className={styles.answerCount}>{answerCount}</p>
           <p className={styles.answerNote}>답변</p>
         </div>
