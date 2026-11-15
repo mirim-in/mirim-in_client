@@ -1,9 +1,8 @@
 import { MainTag } from "@/components/common/MainTag";
 import styles from "@/styles/apps/(main)/page.module.css";
 import "@/styles/globals.css";
-import { TagGroup } from "@/components/common/Tag";
-import { RecentQuestion } from "@/components/common/RecentQuestion";
 import { PopularQuestions } from "@/components/common/PopularQuestions";
+import { RecentQuestions } from "@/components/common/RecentQuestions";
 import { POPULAR_SORTS, type PopularSort } from "@/constants/popularSorts";
 
 const MAIN_TAGS = [
@@ -110,7 +109,7 @@ interface RecentQuestionProps {
 }
 const getRecentQuestions = async (): Promise<RecentQuestionProps[]> => {
   try {
-    const res = await fetch(`${API_URL}/api/questions`, {
+    const res = await fetch(`${API_URL}/api/questions?size=5`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -120,8 +119,7 @@ const getRecentQuestions = async (): Promise<RecentQuestionProps[]> => {
       throw new Error(`API 요청 실패: ${res.status}`);
     }
     const data = await res.json();
-    console.log(data);
-    return data;
+    return data.content ?? [];
   } catch (err) {
     console.log("최근 질문 불러오기 실패", err);
     return [];
@@ -130,8 +128,7 @@ const getRecentQuestions = async (): Promise<RecentQuestionProps[]> => {
 
 export default async function Home() {
   const popularQuestions = await getPopularQuestions(POPULAR_SORTS[0].value);
-  const tags_obj = await getTags();
-  const tags_arr = tags_obj.map((t) => t.name);
+  const categories = await getTags();
   const recentQuestions = await getRecentQuestions();
   return (
     <div className={styles.wrap}>
@@ -148,35 +145,10 @@ export default async function Home() {
         })}
       </div>
       <PopularQuestions initialQuestions={popularQuestions} />
-      <div className={styles.recentQuestionWrap}>
-        <p className={styles.title}>최근에 작성된 질문</p>
-        <TagGroup tags={["전체", ...tags_arr]} />
-        <div className={styles.rqw}>
-          {recentQuestions.length > 0 ? (
-            recentQuestions
-              .slice(0, 5)
-              .map((r) => (
-                <RecentQuestion
-                  key={r.id}
-                  id={r.id}
-                  title={r.title}
-                  preview={r.preview}
-                  anonymous={r.anonymous}
-                  status={r.status}
-                  author={r.author}
-                  categories={r.categories}
-                  viewCount={r.viewCount}
-                  answerCount={r.answerCount}
-                  publishedAt={r.publishedAt}
-                />
-              ))
-          ) : (
-            <div className={styles.notExists}>
-              <p>작성된 질문이 존재하지 않습니다.</p>
-            </div>
-          )}
-        </div>
-      </div>
+      <RecentQuestions
+        categories={categories}
+        initialQuestions={recentQuestions}
+      />
     </div>
   );
 }
