@@ -174,7 +174,7 @@ export default async function Home() {
             ))
           ) : (
             <div className={styles.notExists}>
-              <p>데이터가 존재하지 않습니다.</p>
+              <p>작성된 질문이 존재하지 않습니다.</p>
             </div>
           )}
         </div>
@@ -187,7 +187,7 @@ export default async function Home() {
         <TagGroup tags={["전체", ...tags_arr]} />
         <div className={styles.rqw}>
           {recentQuestions.length > 0 ? (
-            recentQuestions.map((r) => (
+            recentQuestions.slice(0, 5).map((r) => (
               <RecentQuestion
                 key={r.id}
                 id={r.id}
