@@ -25,10 +25,11 @@ export const Tag = ({ isSelect, text, onClick }: Props) => (
 interface TagGroupProps {
   tags: string[];
   onChange?: (tag: string, index: number) => void;
+  defaultIndex?: number;
 }
 
-export const TagGroup = ({ tags, onChange }: TagGroupProps) => {
-  const [selected, setSelected] = useState(0);
+export const TagGroup = ({ tags, onChange, defaultIndex = 0 }: TagGroupProps) => {
+  const [selected, setSelected] = useState(defaultIndex);
 
   return (
     <div className={styles.group}>

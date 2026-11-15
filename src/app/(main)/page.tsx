@@ -5,6 +5,11 @@ import { TagGroup } from "@/components/common/Tag";
 import { Question } from "@/components/common/Question";
 import { Pagination } from "@/components/common/Pagination";
 import { RecentQuestion } from "@/components/common/RecentQuestion";
+import {
+  POPULAR_SORTS,
+  PopularSort,
+  PopularSortTags,
+} from "@/components/common/PopularSortTags";
 const MAIN_TAGS = [
   {
     id: "1",
@@ -26,7 +31,6 @@ const MAIN_TAGS = [
   },
 ];
 
-const POPULAR_SORTS = ["이번 주", "이번 달", "조회수"];
 const API_URL = process.env.NEXT_PUBLIC_API_URL;
 // 인기질문 불러오기
 interface Author {
@@ -49,9 +53,11 @@ interface PopularQuestion {
   answerCount: number;
 }
 
-const getPopularQuestions = async (): Promise<PopularQuestion[]> => {
+const getPopularQuestions = async (
+  sort: PopularSort,
+): Promise<PopularQuestion[]> => {
   try {
-    const res = await fetch(`${API_URL}/api/questions/popular`, {
+    const res = await fetch(`${API_URL}/api/questions/popular?sort=${sort}`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -128,8 +134,16 @@ const getRecentQuestions = async (): Promise<RecentQuestionProps[]> => {
 
 const QUESTION_ROWS = 3;
 
-export default async function Home() {
-  const POPULAR_QUESTIONS = await getPopularQuestions();
+export default async function Home({
+  searchParams,
+}: {
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+}) {
+  const { sort: sortParam } = await searchParams;
+  const sort: PopularSort =
+    POPULAR_SORTS.find((s) => s.value === sortParam)?.value ??
+    POPULAR_SORTS[0].value;
+  const POPULAR_QUESTIONS = await getPopularQuestions(sort);
   const QUESTION_COLUMNS = [
     POPULAR_QUESTIONS.slice(0, QUESTION_ROWS),
     POPULAR_QUESTIONS.slice(QUESTION_ROWS, QUESTION_ROWS * 2),
@@ -154,7 +168,7 @@ export default async function Home() {
       <div className={styles.popularWrap}>
         <div className={styles.titleWrap}>
           <p className={styles.title}>인기 질문</p>
-          <TagGroup tags={POPULAR_SORTS} />
+          <PopularSortTags current={sort} />
         </div>
         <div className={styles.questionWrap}>
           {POPULAR_QUESTIONS.length > 0 ? (
