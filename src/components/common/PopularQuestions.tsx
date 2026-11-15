@@ -35,7 +35,7 @@ const getPopularQuestions = async (
   sort: PopularSort,
 ): Promise<PopularQuestion[]> => {
   try {
-    const res = await fetch(`${API_URL}/api/questions/popular?sort=${sort}`, {
+    const res = await fetch(`${API_URL}/api/questions/popular?period=${sort}`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
