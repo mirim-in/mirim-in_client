@@ -48,11 +48,16 @@ interface PopularQuestion {
   answerCount: number;
 }
 
+interface PopularQuestionPage {
+  content: PopularQuestion[];
+  totalPages: number;
+}
+
 const getPopularQuestions = async (
   sort: PopularSort,
-): Promise<PopularQuestion[]> => {
+): Promise<PopularQuestionPage> => {
   try {
-    const res = await fetch(`${API_URL}/api/questions/popular?period=${sort}`, {
+    const res = await fetch(`${API_URL}/api/questions/popular?period=${sort}&page=0&size=6`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -63,10 +68,10 @@ const getPopularQuestions = async (
       throw new Error(`API 요청 실패: ${res.status}`);
     }
     const data = await res.json();
-    return data.content ?? [];
+    return { content: data.content ?? [], totalPages: data.totalPages ?? 0 };
   } catch (err) {
     console.error("인기 질문 불러오기 에러:", err);
-    return [];
+    return { content: [], totalPages: 0 };
   }
 };
 interface Category {
@@ -144,7 +149,10 @@ export default async function Home() {
           );
         })}
       </div>
-      <PopularQuestions initialQuestions={popularQuestions} />
+      <PopularQuestions
+        initialQuestions={popularQuestions.content}
+        initialTotalPages={popularQuestions.totalPages}
+      />
       <RecentQuestions
         categories={categories}
         initialQuestions={recentQuestions}
