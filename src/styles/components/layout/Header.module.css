@@ -1,62 +1,64 @@
 .header {
+  position: relative;
+  z-index: 10;
   display: flex;
+  flex-shrink: 0;
   width: 100%;
   flex-direction: column;
   align-items: center;
-  justify-content: center ;
+  justify-content: center;
   box-shadow: 0 0 12px rgba(0, 0, 0, 0.08);
-  overflow: hidden;
 }
 
 .wrap {
   display: flex;
   max-width: 1920px;
   width: 100%;
+  gap: clamp(8px, 7.19vw, 138px);
   box-sizing: border-box;
-  padding: 24px 0 8px 0;
-  justify-content: space-between;
+  padding: clamp(12px, 1.04vw, 20px) 0 clamp(4px, 0.31vw, 6px) 0;
   align-items: center;
+  justify-content: space-between;
   background: var(--fff, #fff);
 }
+
 .logoWrap {
   display: flex;
   flex: 1 1 0;
-  width: 100%;
-  padding-left: clamp(16px, 10vw, 200px);
-  min-width: 0;
+  min-width: max-content;
+  padding-left: clamp(16px, 10.42vw, 200px);
   box-sizing: border-box;
   align-items: center;
-  gap: 8px;
-  flex-shrink: 0;
+  gap: clamp(5px, 0.42vw, 8px);
 }
 
 .logo {
-  width: 40px;
-  height: 40px;
+  width: clamp(26px, 1.67vw, 32px);
+  height: clamp(26px, 1.67vw, 32px);
   flex-shrink: 0;
   background: url("/assets/icon/logo.svg") no-repeat center / contain;
 }
 
 .logoTextWrap {
   display: flex;
-  height: 44px;
   align-items: center;
+  white-space: nowrap;
 }
 
 .logoText {
   color: var(--000, #000);
   font-family: MICEGothic;
-  font-size: 28px;
+  font-size: clamp(18px, 1.15vw, 22px);
   font-style: normal;
   font-weight: 700;
   line-height: normal;
-  letter-spacing: -1.68px;
+  letter-spacing: -0.06em;
 }
 
 .logoTextSub {
   color: var(--green, #007f59);
   font-family: "Noto Sans KR", sans-serif;
-  font-size: 28px;
+  font-size: clamp(18px, 1.15vw, 22px);
   font-style: normal;
   font-weight: 700;
   line-height: normal;
@@ -64,14 +66,14 @@
 
 .search {
   display: flex;
-  min-width: 0;
-  padding: 12px 16px;
+  flex: 0 1 clamp(400px, 33.33vw, 640px);
+  min-width: 120px;
+  padding: clamp(6px, 0.52vw, 10px) clamp(10px, 0.73vw, 14px);
   box-sizing: border-box;
   justify-content: flex-end;
   align-items: center;
-  gap: 10px;
-  flex: 0 1 800px;
-  border-radius: 12px;
+  gap: clamp(6px, 0.52vw, 10px);
+  border-radius: clamp(8px, 0.62vw, 12px);
   background: var(--gray, #f8f7f7);
 }
 
@@ -90,6 +92,7 @@
   outline: none;
   background: transparent;
   font: inherit;
+  font-size: clamp(13px, 0.78vw, 15px);
   color: inherit;
 }
 
@@ -98,8 +101,8 @@
 }
 
 .searchIcon {
-  width: 22px;
-  height: 22px;
+  width: clamp(16px, 0.94vw, 18px);
+  height: clamp(16px, 0.94vw, 18px);
   flex-shrink: 0;
   background: url("/assets/icon/search-icon.svg") no-repeat center / contain;
   cursor: pointer;
@@ -108,20 +111,19 @@
 .user {
   display: flex;
   flex: 1 1 0;
-  min-width: 0;
-  padding-right: clamp(16px, 10vw, 200px);
+  min-width: max-content;
+  padding-right: clamp(16px, 10.42vw, 200px);
   box-sizing: border-box;
   flex-direction: column;
   justify-content: center;
   align-items: flex-end;
-  gap: 10px;
-  flex-shrink: 0;
+  gap: clamp(6px, 0.52vw, 10px);
 }
 
 .userWrap {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: clamp(8px, 0.63vw, 12px);
 }
 
 .userInfo {
@@ -129,20 +131,21 @@
   flex-direction: column;
   justify-content: center;
   align-items: flex-end;
+  white-space: nowrap;
 }
 
 .userInfoWrap {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 8px;
+  gap: clamp(5px, 0.42vw, 8px);
 }
 
 .userName {
   margin: 0;
   color: var(--000, #000);
   font-family: "Noto Sans KR", sans-serif;
-  font-size: 18px;
+  font-size: clamp(13px, 0.83vw, 16px);
   font-style: normal;
   font-weight: 400;
   line-height: normal;
@@ -152,7 +155,7 @@
   margin: 0;
   color: var(--darkgray, #666);
   font-family: "Noto Sans KR", sans-serif;
-  font-size: 14px;
+  font-size: clamp(11px, 0.63vw, 12px);
   font-style: normal;
   font-weight: 350;
   line-height: normal;
@@ -160,8 +163,8 @@
 
 .check {
   display: flex;
-  width: 12px;
-  height: 12px;
+  width: clamp(8px, 0.62vw, 12px);
+  height: clamp(8px, 0.62vw, 12px);
   flex-shrink: 0;
   justify-content: center;
   align-items: center;
@@ -170,8 +173,8 @@
 }
 
 .userProfile {
-  width: 32px;
-  height: 32px;
+  width: clamp(24px, 1.46vw, 28px);
+  height: clamp(24px, 1.46vw, 28px);
   flex-shrink: 0;
   background: url("/assets/icon/user-icon.svg") no-repeat center / contain;
 }

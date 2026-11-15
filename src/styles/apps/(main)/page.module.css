@@ -1,15 +1,90 @@
 .mainTagWrap {
   display: flex;
-  height: 126px;
+  height: clamp(90px, 6.56vw, 126px);
   align-items: center;
-  gap: 8px;
+  gap: clamp(4px, 0.42vw, 8px);
   align-self: stretch;
 }
 
 .wrap {
   display: flex;
-  width: 1000px;
+  width: 100%;
+  max-width: 1000px;
+  min-width: 0;
   flex-direction: column;
   align-items: flex-start;
-  gap: 80px;
+  gap: clamp(32px, 4.17vw, 80px);
+}
+
+.popularWrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(16px, 1.25vw, 24px);
+  align-self: stretch;
+  margin-bottom: clamp(72px, 6.2vw, 120px);
+}
+.titleWrap {
+  display: flex;
+  padding-right: clamp(4px, 0.42vw, 8px);
+  justify-content: space-between;
+  align-items: center;
+  align-self: stretch;
+}
+
+.title {
+  color: #000;
+
+  /* M_28 */
+  font-family: "Noto Sans KR";
+  font-size: clamp(20px, 1.46vw, 28px);
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.questionWrap {
+  display: flex;
+  align-items: flex-start;
+  align-self: stretch;
+}
+
+.questionColumn {
+  display: flex;
+  flex: 1 1 0;
+  min-width: 0;
+  flex-direction: column;
+}
+
+.pagenationWrap {
+  display: flex;
+  width: 100%;
+  padding: clamp(15px, 1.25vw, 24px) 0;
+  justify-content: center;
+  align-items: center;
+  gap: clamp(10px, 0.83vw, 16px);
+}
+
+.notExists {
+  width: 100%;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.recentQuestionWrap {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: clamp(16px, 1.25vw, 24px);
+  align-self: stretch;
+  width: 100%;
+}
+
+.rqw {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  align-self: stretch;
 }
