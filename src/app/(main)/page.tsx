@@ -2,14 +2,10 @@ import { MainTag } from "@/components/common/MainTag";
 import styles from "@/styles/apps/(main)/page.module.css";
 import "@/styles/globals.css";
 import { TagGroup } from "@/components/common/Tag";
-import { Question } from "@/components/common/Question";
-import { Pagination } from "@/components/common/Pagination";
 import { RecentQuestion } from "@/components/common/RecentQuestion";
-import {
-  POPULAR_SORTS,
-  PopularSort,
-  PopularSortTags,
-} from "@/components/common/PopularSortTags";
+import { PopularQuestions } from "@/components/common/PopularQuestions";
+import { POPULAR_SORTS, type PopularSort } from "@/constants/popularSorts";
+
 const MAIN_TAGS = [
   {
     id: "1",
@@ -32,7 +28,7 @@ const MAIN_TAGS = [
 ];
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL;
-// 인기질문 불러오기
+// 인기질문 불러오기 (첫 화면용)
 interface Author {
   id: number;
   name: string;
@@ -68,7 +64,6 @@ const getPopularQuestions = async (
       throw new Error(`API 요청 실패: ${res.status}`);
     }
     const data = await res.json();
-    // console.log(data.content);
     return data.content ?? [];
   } catch (err) {
     console.error("인기 질문 불러오기 에러:", err);
@@ -80,6 +75,7 @@ interface Category {
   name: string;
   official: boolean;
 }
+
 const getTags = async (): Promise<Category[]> => {
   try {
     const res = await fetch(`${API_URL}/api/categories`, {
@@ -132,22 +128,8 @@ const getRecentQuestions = async (): Promise<RecentQuestionProps[]> => {
   }
 };
 
-const QUESTION_ROWS = 3;
-
-export default async function Home({
-  searchParams,
-}: {
-  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
-}) {
-  const { sort: sortParam } = await searchParams;
-  const sort: PopularSort =
-    POPULAR_SORTS.find((s) => s.value === sortParam)?.value ??
-    POPULAR_SORTS[0].value;
-  const POPULAR_QUESTIONS = await getPopularQuestions(sort);
-  const QUESTION_COLUMNS = [
-    POPULAR_QUESTIONS.slice(0, QUESTION_ROWS),
-    POPULAR_QUESTIONS.slice(QUESTION_ROWS, QUESTION_ROWS * 2),
-  ];
+export default async function Home() {
+  const popularQuestions = await getPopularQuestions(POPULAR_SORTS[0].value);
   const tags_obj = await getTags();
   const tags_arr = tags_obj.map((t) => t.name);
   const recentQuestions = await getRecentQuestions();
@@ -165,57 +147,29 @@ export default async function Home({
           );
         })}
       </div>
-      <div className={styles.popularWrap}>
-        <div className={styles.titleWrap}>
-          <p className={styles.title}>인기 질문</p>
-          <PopularSortTags current={sort} />
-        </div>
-        <div className={styles.questionWrap}>
-          {POPULAR_QUESTIONS.length > 0 ? (
-            QUESTION_COLUMNS.map((column, col) => (
-              <div key={col} className={styles.questionColumn}>
-                {column.map((q, i) => (
-                  <Question
-                    key={q.id}
-                    num={col * QUESTION_ROWS + i + 1}
-                    title={q.title}
-                    note={q.preview}
-                    view={q.viewCount}
-                    res={q.answerCount}
-                  />
-                ))}
-              </div>
-            ))
-          ) : (
-            <div className={styles.notExists}>
-              <p>작성된 질문이 존재하지 않습니다.</p>
-            </div>
-          )}
-        </div>
-        <div className={styles.pagenationWrap}>
-          <Pagination totalPages={10} />
-        </div>
-      </div>
+      <PopularQuestions initialQuestions={popularQuestions} />
       <div className={styles.recentQuestionWrap}>
         <p className={styles.title}>최근에 작성된 질문</p>
         <TagGroup tags={["전체", ...tags_arr]} />
         <div className={styles.rqw}>
           {recentQuestions.length > 0 ? (
-            recentQuestions.slice(0, 5).map((r) => (
-              <RecentQuestion
-                key={r.id}
-                id={r.id}
-                title={r.title}
-                preview={r.preview}
-                anonymous={r.anonymous}
-                status={r.status}
-                author={r.author}
-                categories={r.categories}
-                viewCount={r.viewCount}
-                answerCount={r.answerCount}
-                publishedAt={r.publishedAt}
-              />
-            ))
+            recentQuestions
+              .slice(0, 5)
+              .map((r) => (
+                <RecentQuestion
+                  key={r.id}
+                  id={r.id}
+                  title={r.title}
+                  preview={r.preview}
+                  anonymous={r.anonymous}
+                  status={r.status}
+                  author={r.author}
+                  categories={r.categories}
+                  viewCount={r.viewCount}
+                  answerCount={r.answerCount}
+                  publishedAt={r.publishedAt}
+                />
+              ))
           ) : (
             <div className={styles.notExists}>
               <p>작성된 질문이 존재하지 않습니다.</p>
