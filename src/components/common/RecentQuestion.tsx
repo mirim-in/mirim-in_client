@@ -1,5 +1,6 @@
 import styles from "@/styles/components/common/RecentQuestion.module.css";
 import { SmallTagGroup } from "./Tag";
+import Link from "next/link";
 
 interface Author {
   id: number;
@@ -43,7 +44,7 @@ export const RecentQuestion = ({
 }: Props) => {
   const publish = publishedAt.slice(0, 10).split("-").join(".");
   return (
-    <div className={styles.wrap}>
+    <Link href={`/question/${id}`} className={styles.wrap}>
       <div className={styles.left}>
         <div className={styles.titleWrap}>
           <p className={styles.title}>{title}</p>
@@ -54,7 +55,7 @@ export const RecentQuestion = ({
                 ? {
                     backgroundColor: "var(--light-green, #E6F1E9)",
                   }
-                : { backgroundColor: "var(--gray, #F8F7F7);" }
+                : { backgroundColor: "var(--gray, #F8F7F7)" }
             }
           >
             {status.toLowerCase() === "resolved" ? (
@@ -83,6 +84,6 @@ export const RecentQuestion = ({
           <p className={styles.answerNote}>답변</p>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };

@@ -1,5 +1,7 @@
 import styles from "@/styles/components/common/Question.module.css";
+import Link from "next/link";
 interface Props {
+  id: string | number;
   num: number;
   title: string;
   note: string;
@@ -7,9 +9,9 @@ interface Props {
   res: number;
 }
 
-export const Question = ({ num, title, note, view, res }: Props) => {
+export const Question = ({ id, num, title, note, view, res }: Props) => {
   return (
-    <div className={styles.container}>
+    <Link href={`/question/${id}`} className={styles.container}>
       <div className={styles.numWrap}>
         <p className={styles.num}>{num}</p>
       </div>
@@ -23,6 +25,6 @@ export const Question = ({ num, title, note, view, res }: Props) => {
           <p className={styles.res}>답변 {res}</p>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
