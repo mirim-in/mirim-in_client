@@ -79,7 +79,6 @@ export const PopularQuestions = ({
   const [page, setPage] = useState(0);
   const [questions, setQuestions] = useState(initialQuestions);
   const [totalPages, setTotalPages] = useState(initialTotalPages);
-  // 탭/페이지를 빠르게 연속으로 눌렀을 때, 늦게 도착한 이전 응답이 덮어쓰지 않도록
   const latestRequest = useRef(0);
 
   const load = async (nextSort: PopularSort, nextPage: number) => {
