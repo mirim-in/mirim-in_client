@@ -1,0 +1,102 @@
+.wrap {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(24px, 1.67vw, 32px);
+}
+
+.titleWrap {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.title {
+  margin: 0;
+  color: var(--000, #000);
+  font-size: clamp(22px, 1.35vw, 26px);
+  font-weight: 700;
+}
+
+.sub {
+  color: var(--darkgray, #666);
+  font-size: clamp(13px, 0.78vw, 15px);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(14px, 0.94vw, 18px);
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.label {
+  color: var(--000, #000);
+  font-size: clamp(13px, 0.78vw, 15px);
+  font-weight: 500;
+}
+
+.input {
+  height: clamp(44px, 2.6vw, 50px);
+  padding: 0 16px;
+  border: 1px solid #d9d9d9;
+  border-radius: 12px;
+  background: var(--fff, #fff);
+  color: var(--000, #000);
+  font-family: inherit;
+  font-size: clamp(14px, 0.83vw, 16px);
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+.input::placeholder {
+  color: #c9c9c9;
+}
+
+.input:focus {
+  border-color: var(--green, #007f59);
+}
+
+.submit {
+  height: clamp(46px, 2.71vw, 52px);
+  margin-top: 6px;
+  border: none;
+  border-radius: 1000px;
+  background: var(--green, #007f59);
+  color: var(--fff, #fff);
+  font-family: inherit;
+  font-size: clamp(15px, 0.89vw, 17px);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.submit:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+}
+
+.link {
+  color: var(--darkgray, #666);
+  font-size: clamp(13px, 0.78vw, 14px);
+}
+
+.link:hover {
+  color: var(--green, #007f59);
+}
+
+.divider {
+  width: 1px;
+  height: 12px;
+  background: #d9d9d9;
+}
