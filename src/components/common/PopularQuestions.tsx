@@ -113,6 +113,7 @@ export const PopularQuestions = ({
               {column.map((q, i) => (
                 <Question
                   key={q.id}
+                  id={q.id}
                   num={page * PAGE_SIZE + col * QUESTION_ROWS + i + 1}
                   title={q.title}
                   note={q.preview}
