@@ -1,60 +1,22 @@
 .page {
   display: flex;
   min-height: 100dvh;
-  padding: clamp(24px, 2.5vw, 48px) 16px;
-  justify-content: center;
-  align-items: center;
-  background: var(--gray, #f8f7f7);
-}
-
-.wrap {
-  display: flex;
-  width: 100%;
-  max-width: 440px;
+  padding: clamp(100px, 8.33vw, 160px) 16px clamp(60px, 5.21vw, 100px);
   flex-direction: column;
   align-items: center;
-  gap: clamp(20px, 1.67vw, 32px);
-}
-
-.logoWrap {
-  display: flex;
-  align-items: center;
-  gap: clamp(6px, 0.52vw, 10px);
-}
-
-.logo {
-  width: clamp(32px, 2.08vw, 40px);
-  height: clamp(32px, 2.08vw, 40px);
-  flex-shrink: 0;
-  background: url("/assets/icon/logo.svg") no-repeat center / contain;
-}
-
-.logoTextWrap {
-  display: flex;
-  align-items: center;
-  white-space: nowrap;
-}
-
-.logoText {
-  color: var(--000, #000);
-  font-family: MICEGothic;
-  font-size: clamp(24px, 1.56vw, 30px);
-  font-weight: 700;
-  letter-spacing: -0.06em;
-}
-
-.logoTextSub {
-  color: var(--green, #007f59);
-  font-size: clamp(24px, 1.56vw, 30px);
-  font-weight: 700;
+  background: var(--gray, #f8f7f7);
 }
 
 .card {
   display: flex;
   width: 100%;
-  padding: clamp(28px, 2.08vw, 40px) clamp(24px, 1.88vw, 36px);
+  max-width: clamp(440px, 28.13vw, 540px);
+  padding: clamp(28px, 2.08vw, 40px);
   flex-direction: column;
-  border-radius: 20px;
+  align-items: center;
+  gap: clamp(28px, 2.08vw, 40px);
+  border: 1px solid var(--10, rgba(0, 0, 0, 0.1));
+  border-radius: clamp(18px, 1.25vw, 24px);
   background: var(--fff, #fff);
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
+  filter: drop-shadow(0 4px 20px var(--10, rgba(0, 0, 0, 0.1)));
 }

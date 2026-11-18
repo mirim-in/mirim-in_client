@@ -1,102 +1,172 @@
-.wrap {
+/* 상단: 엠블럼 + 제목 */
+.header {
   display: flex;
+  width: 100%;
   flex-direction: column;
-  gap: clamp(24px, 1.67vw, 32px);
+  align-items: center;
+  gap: clamp(12px, 0.83vw, 16px);
 }
 
-.titleWrap {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
+.emblem {
+  position: relative;
+  width: clamp(80px, 5.21vw, 100px);
+  height: clamp(80px, 5.21vw, 100px);
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+/* 원본 이미지 여백을 잘라내기 위해 확대 후 위치 보정 (피그마 크롭 값) */
+.emblemImage {
+  position: absolute;
+  top: -10.3%;
+  left: -10.91%;
+  width: 121.21%;
+  height: 121.21%;
+  background: url("/assets/image/mirim-emblem.png") no-repeat center / contain;
 }
 
 .title {
-  margin: 0;
   color: var(--000, #000);
-  font-size: clamp(22px, 1.35vw, 26px);
-  font-weight: 700;
+  font-size: clamp(22px, 1.46vw, 28px);
+  font-weight: 500;
+  line-height: 1.2;
 }
 
-.sub {
-  color: var(--darkgray, #666);
-  font-size: clamp(13px, 0.78vw, 15px);
-}
-
+/* 입력 폼 */
 .form {
   display: flex;
+  width: 100%;
   flex-direction: column;
-  gap: clamp(14px, 0.94vw, 18px);
+  gap: clamp(28px, 2.08vw, 40px);
+}
+
+.fields {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(12px, 0.83vw, 16px);
 }
 
 .field {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: clamp(6px, 0.42vw, 8px);
 }
 
 .label {
-  color: var(--000, #000);
-  font-size: clamp(13px, 0.78vw, 15px);
-  font-weight: 500;
+  color: var(--darkgray, #666);
+  font-size: clamp(14px, 0.83vw, 16px);
+  font-weight: 400;
+  line-height: 1.2;
 }
 
 .input {
-  height: clamp(44px, 2.6vw, 50px);
-  padding: 0 16px;
-  border: 1px solid #d9d9d9;
-  border-radius: 12px;
-  background: var(--fff, #fff);
+  width: 100%;
+  padding: clamp(12px, 0.83vw, 16px) clamp(18px, 1.25vw, 24px);
+  border: none;
+  border-radius: clamp(10px, 0.63vw, 12px);
+  background: var(--gray, #f8f7f7);
   color: var(--000, #000);
   font-family: inherit;
-  font-size: clamp(14px, 0.83vw, 16px);
+  font-size: clamp(15px, 0.94vw, 18px);
+  font-weight: 400;
+  line-height: 1.2;
   outline: none;
-  transition: border-color 0.15s;
 }
 
 .input::placeholder {
-  color: #c9c9c9;
+  color: var(--30, rgba(0, 0, 0, 0.3));
 }
 
-.input:focus {
-  border-color: var(--green, #007f59);
+.input:focus-visible {
+  box-shadow: inset 0 0 0 1px var(--green, #007f59);
 }
 
 .submit {
-  height: clamp(46px, 2.71vw, 52px);
-  margin-top: 6px;
+  display: flex;
+  width: 100%;
+  padding: clamp(12px, 0.83vw, 16px) clamp(28px, 2.08vw, 40px);
+  justify-content: center;
+  align-items: center;
   border: none;
   border-radius: 1000px;
   background: var(--green, #007f59);
   color: var(--fff, #fff);
   font-family: inherit;
-  font-size: clamp(15px, 0.89vw, 17px);
-  font-weight: 700;
+  font-size: clamp(16px, 1.04vw, 20px);
+  font-weight: 500;
+  line-height: 1.2;
   cursor: pointer;
 }
 
-.submit:disabled {
-  opacity: 0.5;
-  cursor: default;
+/* 간편 로그인 */
+.social {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(12px, 0.83vw, 16px);
 }
 
-.links {
+.socialText {
+  color: var(--darkgray, #666);
+  font-size: clamp(14px, 0.83vw, 16px);
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.socialButton {
   display: flex;
+  padding: clamp(12px, 0.83vw, 16px);
   justify-content: center;
   align-items: center;
-  gap: 12px;
+  border: none;
+  border-radius: 1000px;
+  background: var(--green, #007f59);
+  cursor: pointer;
 }
 
-.link {
+.googleIcon {
+  display: block;
+  width: 24px;
+  height: 24px;
+  background: url("/assets/icon/google.png") no-repeat center / cover;
+}
+
+/* 하단 링크 */
+.links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(12px, 0.83vw, 16px);
+  white-space: nowrap;
+}
+
+.signupWrap {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 4px;
+}
+
+.linkText {
   color: var(--darkgray, #666);
-  font-size: clamp(13px, 0.78vw, 14px);
+  font-size: clamp(14px, 0.83vw, 16px);
+  font-weight: 400;
+  line-height: 1.2;
 }
 
-.link:hover {
+.signupLink {
   color: var(--green, #007f59);
+  font-size: clamp(14px, 0.83vw, 16px);
+  font-weight: 400;
+  line-height: 1.2;
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+  text-underline-position: from-font;
 }
 
-.divider {
-  width: 1px;
-  height: 12px;
-  background: #d9d9d9;
+.findPassword {
+  color: var(--darkgray, #666);
+  font-size: clamp(12px, 0.73vw, 14px);
+  font-weight: 350;
+  line-height: 1.2;
 }
