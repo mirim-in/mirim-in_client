@@ -1,19 +1,27 @@
+"use client";
+
 import Link from "next/link";
 import styles from "@/styles/apps/(auth)/login.module.css";
+import { login } from "@/api/auth";
+import { useActionState } from "react";
 
 export default function LoginPage() {
-  
+  const [state, formAction, pending] = useActionState(login, { error: "" });
   return (
     <>
       <div className={styles.header}>
-        <div className={styles.emblem} role="img" aria-label="미림마이스터고 로고">
+        <div
+          className={styles.emblem}
+          role="img"
+          aria-label="미림마이스터고 로고"
+        >
           <div className={styles.emblemImage}></div>
         </div>
         <h1 className={styles.title}>로그인</h1>
       </div>
 
       {/* TODO: 로그인 Server Action 연결 후 action={login} 추가, 버튼 type="submit"으로 변경 */}
-      <form className={styles.form}>
+      <form action={formAction} className={styles.form}>
         <div className={styles.fields}>
           <label className={styles.field}>
             <span className={styles.label}>이메일</span>
@@ -38,8 +46,8 @@ export default function LoginPage() {
             />
           </label>
         </div>
-
-        <button type="button" className={styles.submit}>
+        {state.error && <p className={styles.error}>{state.error}</p>}
+        <button type="submit" className={styles.submit} disabled={pending}>
           로그인
         </button>
       </form>
@@ -70,3 +78,4 @@ export default function LoginPage() {
     </>
   );
 }
+

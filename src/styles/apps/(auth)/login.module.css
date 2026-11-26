@@ -170,3 +170,8 @@
   font-weight: 350;
   line-height: 1.2;
 }
+.error {
+  color: #e5484d;
+  font-size: clamp(13px, 0.78vw, 15px);
+  line-height: 1.2;
+}
