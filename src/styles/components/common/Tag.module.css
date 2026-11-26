@@ -31,3 +31,31 @@
 .text.select {
   color: var(--green, #007f59);
 }
+
+/* 작은 태그 (질문 카테고리 표시용, s_cartegory) */
+.smallGroup {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: clamp(6px, 0.42vw, 8px);
+}
+
+.smallTagWrap {
+  display: inline-flex;
+  padding: clamp(2px, 0.21vw, 4px) clamp(6px, 0.42vw, 8px);
+  justify-content: center;
+  align-items: center;
+  border-radius: 1000px;
+  background: var(--gray, #f8f7f7);
+}
+
+.smallTagText {
+  /* L_14 */
+  color: var(--darkgray, #666);
+  font-family: "Noto Sans KR";
+  font-size: clamp(11px, 0.73vw, 14px);
+  font-style: normal;
+  font-weight: 350;
+  line-height: normal;
+  white-space: nowrap;
+}

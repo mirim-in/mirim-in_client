@@ -111,29 +111,3 @@
   gap: clamp(6px, 0.46vw, 8.831px);
   align-self: stretch;
 }
-
-.smallGroup {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: clamp(4px, 0.31vw, 6px);
-}
-
-.smallTagWrap {
-  display: inline-flex;
-  padding: clamp(2px, 0.21vw, 4px) clamp(6px, 0.42vw, 8px);
-  justify-content: center;
-  align-items: center;
-  gap: clamp(6px, 0.52vw, 10px);
-}
-
-.smallTagText {
-  color: var(--darkgray, #666);
-
-  /* L_14 */
-  font-family: "Noto Sans KR";
-  font-size: clamp(11px, 0.73vw, 14px);
-  font-style: normal;
-  font-weight: 350;
-  line-height: normal;
-}
