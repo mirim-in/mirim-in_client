@@ -3,17 +3,6 @@ import "server-only";
 import axios, { AxiosError, type InternalAxiosRequestConfig } from "axios";
 import { cookies } from "next/headers";
 
-/**
- * 서버 전용 axios 인스턴스
- *
- * 토큰은 httpOnly 쿠키에 저장되어 브라우저 JS에서 읽을 수 없으므로,
- * 이 인스턴스는 서버(Server Component, Server Action, Route Handler)에서만 사용한다.
- * 클라이언트 컴포넌트에서 로그인이 필요한 요청을 보내려면 Server Action을 거친다.
- *
- * - 요청: 쿠키의 accessToken을 Authorization 헤더에 자동으로 붙인다.
- * - 응답: 401이면 refreshToken으로 토큰을 재발급받고, 원래 요청을 한 번 다시 보낸다.
- */
-
 const API_URL = process.env.NEXT_PUBLIC_API_URL;
 
 export const ACCESS_TOKEN_COOKIE = "accessToken";
