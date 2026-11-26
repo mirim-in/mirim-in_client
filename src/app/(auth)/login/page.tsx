@@ -2,6 +2,7 @@ import Link from "next/link";
 import styles from "@/styles/apps/(auth)/login.module.css";
 
 export default function LoginPage() {
+  
   return (
     <>
       <div className={styles.header}>
