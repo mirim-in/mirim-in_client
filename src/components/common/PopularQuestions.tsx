@@ -92,11 +92,6 @@ export const PopularQuestions = ({
     }
   };
 
-  const columns = [
-    questions.slice(0, QUESTION_ROWS),
-    questions.slice(QUESTION_ROWS, QUESTION_ROWS * 2),
-  ];
-
   return (
     <div className={styles.popularWrap}>
       <div className={styles.titleWrap}>
@@ -108,21 +103,21 @@ export const PopularQuestions = ({
       </div>
       <div className={styles.questionWrap}>
         {questions.length > 0 ? (
-          columns.map((column, col) => (
-            <div key={col} className={styles.questionColumn}>
-              {column.map((q, i) => (
+          // 2열 그리드, 번호는 가로 방향 (1 2 / 3 4 / 5 6)
+          <div className={styles.questionGrid}>
+            {questions.slice(0, PAGE_SIZE).map((q, i) => (
+              <div key={q.id} className={styles.questionCell}>
                 <Question
-                  key={q.id}
                   id={q.id}
-                  num={page * PAGE_SIZE + col * QUESTION_ROWS + i + 1}
+                  num={page * PAGE_SIZE + i + 1}
                   title={q.title}
                   note={q.preview}
                   view={q.viewCount}
                   res={q.answerCount}
                 />
-              ))}
-            </div>
-          ))
+              </div>
+            ))}
+          </div>
         ) : (
           <div className={styles.notExists}>
             <p>작성된 질문이 존재하지 않습니다.</p>

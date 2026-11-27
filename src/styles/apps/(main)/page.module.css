@@ -49,11 +49,26 @@
   align-self: stretch;
 }
 
-.questionColumn {
+.questionGrid {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+/* 행 구분선: 마지막 행 제외 */
+.questionCell {
   display: flex;
-  flex: 1 1 0;
   min-width: 0;
-  flex-direction: column;
+  border-bottom: 1px solid var(--10, rgba(0, 0, 0, 0.1));
+}
+.questionCell:nth-last-child(-n + 2):nth-child(odd),
+.questionCell:nth-last-child(1) {
+  border-bottom: none;
+}
+
+/* 열 구분선: 왼쪽 열 오른쪽에 */
+.questionCell:nth-child(odd) {
+  border-right: 1px solid var(--10, rgba(0, 0, 0, 0.1));
 }
 
 .pagenationWrap {

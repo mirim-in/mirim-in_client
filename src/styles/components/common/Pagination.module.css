@@ -17,10 +17,10 @@
   background: var(--gray, #f8f7f7);
   cursor: pointer;
 
-  /* R_18 */
+  /* R_16 */
   color: var(--000, #000);
   font-family: "Noto Sans KR";
-  font-size: clamp(14px, 0.94vw, 18px);
+  font-size: clamp(13px, 0.83vw, 16px);
   font-style: normal;
   font-weight: 400;
   line-height: normal;
@@ -38,8 +38,8 @@
 }
 
 .arrow {
-  width: clamp(8px, 0.52vw, 10px);
-  height: clamp(13px, 0.83vw, 16px);
+  width: clamp(5px, 0.31vw, 6px);
+  height: clamp(10px, 0.63vw, 12px);
   flex-shrink: 0;
   padding: 0;
   border: none;
