@@ -97,6 +97,11 @@
   width: 100%;
 }
 
+/* 최근 질문 카테고리 탭은 간격 4px (인기 질문 정렬 탭은 8px) */
+.recentQuestionWrap .categoryTags {
+  gap: clamp(2px, 0.21vw, 4px);
+}
+
 .rqw {
   display: flex;
   flex-direction: column;

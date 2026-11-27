@@ -90,6 +90,7 @@ export const RecentQuestions = ({ categories, initialQuestions }: Props) => {
       <TagGroup
         tags={["전체", ...categories.map((c) => c.name)]}
         onChange={(_, i) => handleCategoryChange(i)}
+        className={styles.categoryTags}
       />
       <div className={styles.rqw}>
         {questions.length > 0 ? (

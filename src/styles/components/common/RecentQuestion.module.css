@@ -1,6 +1,7 @@
 .wrap {
   display: flex;
   padding: clamp(12px, 1.04vw, 20px) 0;
+  border-bottom: 1px solid var(--10, rgba(0, 0, 0, 0.1));
   align-items: flex-start;
   gap: clamp(20px, 2.08vw, 40px);
   align-self: stretch;

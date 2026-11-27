@@ -42,7 +42,8 @@ export const RecentQuestion = ({
   answerCount,
   publishedAt,
 }: Props) => {
-  const publish = publishedAt.slice(0, 10).split("-").join(".");
+  // "2026-09-22T..." → "26.09.22"
+  const publish = publishedAt.slice(2, 10).split("-").join(".");
   return (
     <Link href={`/question/${id}`} className={styles.wrap}>
       <div className={styles.left}>

@@ -26,13 +26,19 @@ interface TagGroupProps {
   tags: string[];
   onChange?: (tag: string, index: number) => void;
   defaultIndex?: number;
+  className?: string;
 }
 
-export const TagGroup = ({ tags, onChange, defaultIndex = 0 }: TagGroupProps) => {
+export const TagGroup = ({
+  tags,
+  onChange,
+  defaultIndex = 0,
+  className,
+}: TagGroupProps) => {
   const [selected, setSelected] = useState(defaultIndex);
 
   return (
-    <div className={styles.group}>
+    <div className={`${styles.group} ${className ?? ""}`}>
       {tags.map((tag, i) => (
         <Tag
           key={tag}
