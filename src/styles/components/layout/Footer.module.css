@@ -63,26 +63,49 @@
 
 .mirimInLogoWrap {
   display: flex;
+  height: clamp(44px, 3.44vw, 66px);
   align-items: center;
-  gap: clamp(6px, 0.52vw, 10px);
-  aspect-ratio: 127/44;
+  gap: clamp(8px, 0.63vw, 12px);
+  flex-shrink: 0;
+  /* 피그마: mix-blend-mode luminosity + opacity 50% → 흑백 반투명 */
+  filter: grayscale(1);
+  opacity: 0.5;
 }
+
+.mirimInEmblem {
+  position: relative;
+  width: clamp(44px, 3.44vw, 66px);
+  height: clamp(44px, 3.44vw, 66px);
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+/* 원본 이미지 여백 크롭 (로그인 엠블럼과 동일) */
+.mirimInEmblemImage {
+  position: absolute;
+  top: -10.3%;
+  left: -10.91%;
+  width: 121.21%;
+  height: 121.21%;
+  background: url("/assets/image/mirim-emblem.png") no-repeat center / contain;
+}
+
 .mirimInText {
   display: flex;
   align-items: center;
   white-space: nowrap;
   font-family: "Noto Sans KR";
-  font-size: clamp(20px, 1.46vw, 28px);
+  font-size: clamp(28px, 2.19vw, 42px);
   font-weight: 700;
   line-height: normal;
 }
 .mirimInText p:first-child {
-  color: var(--darkgray, #666);
+  color: var(--000, #000);
   font-family: MICEGothic, "Noto Sans KR";
   letter-spacing: -0.06em;
 }
 .mirimInText p:last-child {
-  color: var(--30, rgba(0, 0, 0, 0.3));
+  color: var(--green, #007f59);
 }
 
 .menuWrap {
