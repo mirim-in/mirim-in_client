@@ -124,7 +124,7 @@ export const Profile = ({ user }: Props) => {
                   <div className={styles.alarmIcon}></div>
                 </MenuBtn>
                 <MenuBtn
-                  title="공지사항"
+                  title="공지 사항"
                   isActive={tab === "notice"}
                   onClick={() => setTab("notice")}
                 />
