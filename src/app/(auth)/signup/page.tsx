@@ -1,19 +1,28 @@
+"use client";
+
 import Link from "next/link";
 // 로그인과 같은 디자인이라 스타일을 공유한다
 import styles from "@/styles/apps/(auth)/login.module.css";
+import { signup } from "@/api/auth";
+import { useActionState } from "react";
 
 export default function SignupPage() {
+  const [state, formAction, pending] = useActionState(signup, { error: "" });
+
   return (
     <>
       <div className={styles.header}>
-        <div className={styles.emblem} role="img" aria-label="미림마이스터고 로고">
+        <div
+          className={styles.emblem}
+          role="img"
+          aria-label="미림마이스터고 로고"
+        >
           <div className={styles.emblemImage}></div>
         </div>
         <h1 className={styles.title}>회원가입</h1>
       </div>
 
-      {/* TODO: 회원가입 Server Action 연결 후 action={signup} 추가, 버튼 type="submit"으로 변경 */}
-      <form className={styles.form}>
+      <form action={formAction} className={styles.form}>
         <div className={styles.fields}>
           <label className={styles.field}>
             <span className={styles.label}>이름</span>
@@ -52,8 +61,8 @@ export default function SignupPage() {
             />
           </label>
         </div>
-
-        <button type="button" className={styles.submit}>
+        {state.error && <p className={styles.error}>{state.error}</p>}
+        <button type="submit" className={styles.submit} disabled={pending}>
           회원가입
         </button>
       </form>
