@@ -40,7 +40,7 @@ const MenuBtn = ({ title, isActive, onClick }: MenuBtnProps) => (
       <p className={styles.menuBtnTitle}>{title}</p>
       {title === "알람" ? (
         <p
-          className={`${styles.menuBtnTitle} ${!isActive ? styles.menuBtnTitleInActive : ""}`}
+          className={`${styles.menuBtnTitle} ${styles.menuBtnCount} ${!isActive ? styles.menuBtnTitleInActive : ""}`}
         >
           {ALARMS.length}
         </p>

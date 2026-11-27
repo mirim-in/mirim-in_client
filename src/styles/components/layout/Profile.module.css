@@ -249,6 +249,19 @@
 
 .menuBtnTitle {
   color: var(--darkgray, #666);
+
+  /* L_14 */
+  font-family: "Noto Sans KR";
+  font-size: clamp(12px, 0.73vw, 14px);
+  font-style: normal;
+  font-weight: 350;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+/* 알람 개수 (M_14) */
+.menuBtnCount {
+  font-weight: 500;
 }
 
 .menuBtnInActive {
