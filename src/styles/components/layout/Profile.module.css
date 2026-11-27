@@ -140,6 +140,17 @@
   gap: clamp(5px, 0.42vw, 8px);
 }
 
+/* 이름 / "로그인이 필요해요" (R_20) */
+.userNameWrap p {
+  color: var(--000, #000);
+  font-family: "Noto Sans KR";
+  font-size: clamp(16px, 1.04vw, 20px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  white-space: nowrap;
+}
+
 .checkWrap {
   display: flex;
   width: clamp(8px, 0.62vw, 12px);
