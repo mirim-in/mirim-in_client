@@ -205,6 +205,25 @@
   background-repeat: no-repeat;
 }
 
+.loginLinkText {
+  /* L_14 */
+  color: var(--green, #007f59);
+  font-family: "Noto Sans KR";
+  font-size: clamp(12px, 0.73vw, 14px);
+  font-style: normal;
+  font-weight: 350;
+  line-height: normal;
+}
+
+.arrowRightGreen {
+  transform: translateY(1px);
+  width: clamp(5px, 0.42vw, 8px);
+  height: clamp(5px, 0.42vw, 8px);
+  background-image: url("/assets/icon/arrow-right-green.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
 .buttonWrap {
   display: flex;
   width: 100%;

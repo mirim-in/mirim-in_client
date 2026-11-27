@@ -97,7 +97,7 @@ export const Profile = ({ user }: Props) => {
               </div>
             </div>
           ) : (
-            // 비로그인 상태 (피그마 디자인 없음 — 기존 스타일 재사용)
+            // 비로그인 상태 (피그마 UI/UX > Frame 34 > 베리언트2)
             <div className={styles.userWrap}>
               <div className={styles.userProfile}></div>
               <div className={styles.userInfoWrap}>
@@ -105,36 +105,41 @@ export const Profile = ({ user }: Props) => {
                   <p>로그인이 필요해요</p>
                 </div>
                 <Link href="/login" className={styles.profileLink}>
-                  <p className={styles.profileLinkText}>로그인하러 가기</p>
-                  <div className={styles.arrowRight}></div>
+                  <p className={styles.loginLinkText}>로그인 / 회원가입</p>
+                  <div className={styles.arrowRightGreen}></div>
                 </Link>
               </div>
             </div>
           )}
 
-          <div className={styles.buttonWrap}>
-            <MenuBtn
-              title={`알람`}
-              isActive={tab === "alarm"}
-              onClick={() => setTab("alarm")}
-            >
-              <div className={styles.alarmIcon}></div>
-            </MenuBtn>
-            <MenuBtn
-              title="공지사항"
-              isActive={tab === "notice"}
-              onClick={() => setTab("notice")}
-            />
-          </div>
-          <div className={styles.tabWrap}>
-            <div className={styles.tabTextWrap}>
-              {tab === "alarm" ? (
-                <p className={styles.tabText}>알람이 없습니다.</p>
-              ) : (
-                <p className={styles.tabText}>공지사항이 없습니다.</p>
-              )}
-            </div>
-          </div>
+          {/* 알람·공지사항 탭은 로그인했을 때만 표시 */}
+          {user && (
+            <>
+              <div className={styles.buttonWrap}>
+                <MenuBtn
+                  title={`알람`}
+                  isActive={tab === "alarm"}
+                  onClick={() => setTab("alarm")}
+                >
+                  <div className={styles.alarmIcon}></div>
+                </MenuBtn>
+                <MenuBtn
+                  title="공지사항"
+                  isActive={tab === "notice"}
+                  onClick={() => setTab("notice")}
+                />
+              </div>
+              <div className={styles.tabWrap}>
+                <div className={styles.tabTextWrap}>
+                  {tab === "alarm" ? (
+                    <p className={styles.tabText}>알람이 없습니다.</p>
+                  ) : (
+                    <p className={styles.tabText}>공지사항이 없습니다.</p>
+                  )}
+                </div>
+              </div>
+            </>
+          )}
         </div>
       </div>
     </div>
