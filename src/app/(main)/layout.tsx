@@ -1,25 +1,43 @@
 import { Header } from "@/components/layout/Header";
 import { Profile } from "@/components/layout/Profile";
 import { Footer } from "@/components/layout/Footer";
+import { api, getAccessToken } from "@/api/axios";
 
-const user = {
-  name: "윤기진",
-  stuId: "2106",
-  email: "s2546@e-mirim.hs.kr",
-  isAdmin: true,
-};
-export default function MainLayout({
+export interface Me {
+  id: number;
+  email: string;
+  name: string;
+  role: string;
+  memberTypeLabel: string;
+  verified: boolean;
+  profileImageUrl: string | null;
+}
+
+const getMe = async ():Promise<Me | null> => {
+  const token = await getAccessToken();
+  if(!token) return null;
+
+  try{
+    const { data } = await api.get<Me>("/api/users/me")
+    return data;
+  } catch {
+    return null;
+  }
+}
+
+export default  async function MainLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const me = await getMe();
   return (
     <div className="page">
-      <Header user={user} isLogin={true} />
+      <Header user={me} />
       <div className="scroll">
         <div className="pageBody">
           <div className="content">{children}</div>
-          <Profile user={user} isLogin={true} />
+          <Profile user={me} />
         </div>
         <Footer />
       </div>

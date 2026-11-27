@@ -2,20 +2,15 @@
 import styles from "@/styles/components/layout/Header.module.css";
 import Link from "next/link";
 import { PageNav } from "@/components/layout/PageNav";
+import type { Me } from "@/app/(main)/layout";
 
-interface User {
-  name: string;
-  email: string;
-  isAdmin: boolean;
-}
 
 interface headerProps {
-  user: User;
-  isLogin: boolean;
+  user: Me | null;
 }
 
 
-export const Header = ({ user, isLogin }: headerProps) => {
+export const Header = ({ user }: headerProps) => {
   const search = () => {};
   return (
     <div className={styles.header}>
@@ -40,23 +35,25 @@ export const Header = ({ user, isLogin }: headerProps) => {
         <div className={styles.user}>
           <div className={styles.userWrap}>
             <div className={styles.userInfo}>
-              {isLogin ? (
+              {user ? (
                 <>
                   <div className={styles.userInfoWrap}>
                     <p className={styles.userName}>{user.name}</p>
-                    <div className={styles.check}>
-                      <div
-                        style={{
-                          width: "7px",
-                          height: "5px",
-                          flexShrink: 0,
-                          aspectRatio: "7/5",
-                          backgroundImage: 'url("/assets/icon/check.svg")',
-                          backgroundSize: "contain",
-                          backgroundRepeat: "no-repeat",
-                        }}
-                      ></div>
-                    </div>
+                    {user.verified && (
+                      <div className={styles.check}>
+                        <div
+                          style={{
+                            width: "7px",
+                            height: "5px",
+                            flexShrink: 0,
+                            aspectRatio: "7/5",
+                            backgroundImage: 'url("/assets/icon/check.svg")',
+                            backgroundSize: "contain",
+                            backgroundRepeat: "no-repeat",
+                          }}
+                        ></div>
+                      </div>
+                    )}
                   </div>
                   <p className={styles.userEmail}>{user.email}</p>
                 </>
@@ -77,7 +74,7 @@ export const Header = ({ user, isLogin }: headerProps) => {
           </div>
         </div>
       </div>
-      <PageNav isAdmin={user.isAdmin} />
+      <PageNav isAdmin={user?.role === "ADMIN"} />
     </div>
   );
 };

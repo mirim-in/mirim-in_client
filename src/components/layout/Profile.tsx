@@ -3,15 +3,10 @@
 import styles from "@/styles/components/layout/Profile.module.css";
 import Link from "next/link";
 import { useState } from "react";
+import type { Me } from "@/app/(main)/layout";
 
-interface User {
-  name: string;
-  email: string;
-  isAdmin: boolean;
-}
 interface Props {
-  user: User;
-  isLogin: boolean;
+  user: Me | null;
 }
 
 type Tab = "alarm" | "notice";
@@ -56,7 +51,7 @@ const MenuBtn = ({ title, isActive, onClick }: MenuBtnProps) => (
 
 const ALARMS: unknown[] = [];
 
-export const Profile = ({ user, isLogin }: Props) => {
+export const Profile = ({ user }: Props) => {
   const [tab, setTab] = useState<Tab>("alarm");
 
   return (
@@ -80,24 +75,42 @@ export const Profile = ({ user, isLogin }: Props) => {
         </Link>
 
         <div className={styles.profileWrap}>
-          <div className={styles.userWrap}>
-            <div className={styles.userProfile}></div>
-            <div className={styles.userInfoWrap}>
-              <div className={styles.userProfileWrap}>
-                <div className={styles.userNameWrap}>
-                  <p>{user.name}</p>
-                  <div className={styles.checkWrap}>
-                    <div className={styles.check}></div>
+          {user ? (
+            <div className={styles.userWrap}>
+              <div className={styles.userProfile}></div>
+              <div className={styles.userInfoWrap}>
+                <div className={styles.userProfileWrap}>
+                  <div className={styles.userNameWrap}>
+                    <p>{user.name}</p>
+                    {user.verified && (
+                      <div className={styles.checkWrap}>
+                        <div className={styles.check}></div>
+                      </div>
+                    )}
                   </div>
+                  <LogoutBtn />
                 </div>
-                <LogoutBtn />
+                <Link href="/profile" className={styles.profileLink}>
+                  <p className={styles.profileLinkText}>프로필 바로가기</p>
+                  <div className={styles.arrowRight}></div>
+                </Link>
               </div>
-              <Link href="/profile" className={styles.profileLink}>
-                <p className={styles.profileLinkText}>프로필 바로가기</p>
-                <div className={styles.arrowRight}></div>
-              </Link>
             </div>
-          </div>
+          ) : (
+            // 비로그인 상태 (피그마 디자인 없음 — 기존 스타일 재사용)
+            <div className={styles.userWrap}>
+              <div className={styles.userProfile}></div>
+              <div className={styles.userInfoWrap}>
+                <div className={styles.userNameWrap}>
+                  <p>로그인이 필요해요</p>
+                </div>
+                <Link href="/login" className={styles.profileLink}>
+                  <p className={styles.profileLinkText}>로그인하러 가기</p>
+                  <div className={styles.arrowRight}></div>
+                </Link>
+              </div>
+            </div>
+          )}
 
           <div className={styles.buttonWrap}>
             <MenuBtn
