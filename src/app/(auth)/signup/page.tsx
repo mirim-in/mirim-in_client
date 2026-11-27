@@ -53,7 +53,7 @@ export default function SignupPage() {
               type="password"
               name="password"
               className={styles.input}
-              placeholder="비밀번호를 입력해 주세요."
+              placeholder="영문과 숫자를 포함해 8~64자로 입력해 주세요."
               autoComplete="new-password"
               minLength={8}
               maxLength={64}
