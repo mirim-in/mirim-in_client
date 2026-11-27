@@ -11,6 +11,7 @@ export interface Me {
   memberTypeLabel: string;
   verified: boolean;
   profileImageUrl: string | null;
+  point: number;
 }
 
 const getMe = async ():Promise<Me | null> => {

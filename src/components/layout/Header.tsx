@@ -38,6 +38,7 @@ export const Header = ({ user }: headerProps) => {
               {user ? (
                 <>
                   <div className={styles.userInfoWrap}>
+                    <span className={styles.point}>{user.point}P</span>
                     <p className={styles.userName}>{user.name}</p>
                     {user.verified && (
                       <div className={styles.check}>
