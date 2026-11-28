@@ -88,6 +88,16 @@
   align-items: center;
 }
 
+/* 빈 상태 안내 문구 (L_14, 다른 회색 안내 문구와 동일) */
+.notExists p {
+  color: var(--darkgray, #666);
+  font-family: "Noto Sans KR";
+  font-size: clamp(12px, 0.73vw, 14px);
+  font-style: normal;
+  font-weight: 350;
+  line-height: normal;
+}
+
 .recentQuestionWrap {
   display: flex;
   flex-direction: column;
